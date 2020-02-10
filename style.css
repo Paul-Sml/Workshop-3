@@ -1,0 +1,31 @@
+body{
+	margin:0px;
+	background-color: black
+}
+
+.bulle {
+  /*transform: translate(-50%, -50%);
+  top: 80%; left: 50%;*/
+  position: absolute;
+  z-index: 2;
+  margin-top: -280px;
+  margin-left: 60px;
+}
+#fond {
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  top: 50%; left: 50%;
+  position: absolute;
+}
+
+
+#texte {
+	z-index:3;
+	color: white;
+	font-size: 38px;
+	position: absolute;
+	margin-top: -240px;
+	margin-left: 20px;
+	margin-right: 20px;
+	word-break: break-word;
+}
