@@ -1,6 +1,6 @@
 body{
-	margin:0px;
-	background-color: black
+	margin: 0px;
+	background-color: #000;
 }
 
 #fond {
@@ -10,59 +10,90 @@ body{
   position: absolute;
 }
 
-#bulle
- {
+
+#bulle {
   position: absolute;
   z-index: 2;
   margin-top: -170px;
   margin-left: 10px;
 }
 
-#bChoix
- {
-  position: absolute;
-  z-index: 2;
-  margin-top: -280px;
-  margin-left: 10px;
-}
-
 #texte {
-	z-index:3;
+	z-index: 3;
 	color: white;
 	font-size: 32px;
 	font-family: Verdana;
 	position: absolute;
-	margin-top: -139px;
+	margin-top: -140px;
 	margin-left: 24px;
 	margin-right: 24px;
 	word-break: break-word;
 }
 
-#texte2 {
+
+#deuxChoixB {
+  position: absolute;
+  z-index: 2;
+  margin-top: -290px;
+  margin-left: 10px;
+  visibility: hidden;
+}
+#troisChoixB {
+	visibility: hidden;
+}
+
+.txtChoix {
 	z-index:3;
 	color: white;
 	font-size: 32px;
 	font-family: Verdana;
 	position: absolute;
-	margin-top: -95px;
-	margin-left: 24px;
+	margin-top: -3px;
+	margin-left: 5px;
 	margin-right: 24px;
 	word-break: break-word;
 }
 
 /*point and click*/
 
-#cliquables{
-	z-index: 4;
-}
+#cliquables {z-index: 4;}
 
 /*pac1*/
 
-#pac1o1{
-  width: 50px;
+#pac1o1 {
+  width: 50px; height: 50px;
   border: 15px solid green;
-  height: 50px;
   position: absolute;
   top: 500px;
   left: 300px;
+}
+
+/*finpac1*/
+/*fin point and click*/
+
+.choix1 {
+	width: 1880px; height: 36px;
+	border: 1px solid green;
+	z-index: 4;
+	margin-top: -50px;
+	margin-left: 10px;
+	visibility: hidden;
+}
+
+.choix2 {
+	width: 1880px; height: 36px;
+	border: 1px solid green;
+	z-index: 4;
+	margin-top: -90px;
+	margin-left: 10px;
+	visibility: hidden;
+}
+
+.choix3 {
+	width: 1880px; height: 36px;
+	border: 1px solid green;
+	z-index: 4;
+	margin-top: -240px;
+	margin-left: 10px;
+	visibility: hidden;
 }
