@@ -39,10 +39,13 @@ body{
   visibility: hidden;
 }
 #troisChoixB {
+	position: absolute;
 	visibility: hidden;
+	margin-top: -350px;
+	margin-left: 10px;
 }
 
-.txtChoix {
+span {
 	z-index:3;
 	color: white;
 	font-size: 32px;
@@ -71,7 +74,7 @@ body{
 /*finpac1*/
 /*fin point and click*/
 
-.choix1 {
+#dchoix1 {
 	width: 1880px; height: 36px;
 	border: 1px solid green;
 	z-index: 4;
@@ -80,7 +83,7 @@ body{
 	visibility: hidden;
 }
 
-.choix2 {
+#dchoix2 {
 	width: 1880px; height: 36px;
 	border: 1px solid green;
 	z-index: 4;
@@ -89,11 +92,29 @@ body{
 	visibility: hidden;
 }
 
-.choix3 {
+#tchoix1 {
 	width: 1880px; height: 36px;
 	border: 1px solid green;
 	z-index: 4;
-	margin-top: -240px;
+	margin-top: -50px;
+	margin-left: 10px;
+	visibility: hidden;
+}
+
+#tchoix2 {
+	width: 1880px; height: 36px;
+	border: 1px solid green;
+	z-index: 4;
+	margin-top: -90px;
+	margin-left: 10px;
+	visibility: hidden;
+}
+
+#tchoix3 {
+	width: 1880px; height: 36px;
+	border: 1px solid green;
+	z-index: 4;
+  margin-top: -90px;
 	margin-left: 10px;
 	visibility: hidden;
 }

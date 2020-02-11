@@ -50,6 +50,7 @@ t[39] = "texte";
 t[40] = "texte";
 //------------------------Fin texte------------------------
 //------------------------Texte choix------------------------
+/*en standby
 let tc = [100];
 tc[0] = "salut";
 tc[1] = "choix"; 
@@ -92,6 +93,7 @@ tc[37] = "texte";
 tc[38] = "texte";
 tc[39] = "texte";
 tc[40] = "texte";
+*/
 //------------------------Fin texte choix-------------------------
 //------------------------Avancer dans le dialgue------------------------
 $('#bulle').on('click',function() {
@@ -101,9 +103,10 @@ $('#bulle').on('click',function() {
     } 
     if (iTexte==3) {    
         document.getElementById("troisChoixB").style.visibility = "visible";
-        document.getElementByclass("choix1").style.visibility = "visible";
-        document.getElementByclass("choix2").style.visibility = "visible";
-        document.getElementByclass("choix3").style.visibility = "visible";
+        document.getElementById("tchoix1").style.visibility = "visible";
+        document.getElementById("tchoix2").style.visibility = "visible";
+        document.getElementById("tchoix3").style.visibility = "visible";
+
     }
 })
 
