@@ -1,9 +1,11 @@
 //------------------------Initialisation------------------------
 let bulle = $('#bulle');
 let iTexte = 0;
-let choix1 = $('.choix1');
-let choix2 = $('.choix2');
-let choix3 = $('.choix3');
+let tchoix1 = $('#tchoix1');
+let tchoix2 = $('#tchoix2');
+let tchoix3 = $('#tchoix3');
+let dchoix1 = $('#dchoix1');
+let dchoix2 = $('#dchoix2');
 
 //-------------------------Texte------------------------
 let t = [100];
@@ -15,8 +17,8 @@ t[4] = "texte4";
 t[5] = "texte5";
 t[6] = "texte6";
 t[7] = "texte7";
-t[8] = "texte";
-t[9] = "texte";
+t[8] = "texte8";
+t[9] = "texte9";
 t[10] = "texte";
 t[11] = "texte";
 t[12] = "texte";
@@ -97,7 +99,7 @@ tc[40] = "texte";
 //------------------------Fin texte choix-------------------------
 //------------------------Avancer dans le dialgue------------------------
 $('#bulle').on('click',function() {
-    if (iTexte!=2 && iTexte!=3) {
+    if (iTexte!=2 && iTexte!=3 &&iTexte!=8) {
         iTexte ++;
         document.getElementById("texte").innerHTML = t[iTexte];
     } 
@@ -106,7 +108,11 @@ $('#bulle').on('click',function() {
         document.getElementById("tchoix1").style.visibility = "visible";
         document.getElementById("tchoix2").style.visibility = "visible";
         document.getElementById("tchoix3").style.visibility = "visible";
-
+    }
+    if (iTexte==8) {
+        document.getElementById("deuxChoixB").style.visibility = "visible";
+        document.getElementById("dchoix1").style.visibility = "visible";
+        document.getElementById("dchoix2").style.visibility = "visible";
     }
 })
 
@@ -120,19 +126,39 @@ $('#pac1o1').on('click',function() {
 })
 //------------------------Fin poc1------------------------
 //Choix It 1------------------------
-choix1.on('click',function() {
+tchoix1.on('click',function() {
 	if (iTexte==3) {
 		iTexte++;
 		document.getElementById("texte").innerHTML = t[iTexte];
-        document.getElementById("deuxChoixB").style.visibility = "hidden";
-        iTexte++;
+        document.getElementById("troisChoixB").style.visibility = "hidden";
+        document.getElementById("tchoix1").style.visibility = "hidden";
+        document.getElementById("tchoix2").style.visibility = "hidden";
+        document.getElementById("tchoix3").style.visibility = "hidden";
+        iTexte+=2;
 	}
 })
-choix2.on('click',function() {
+tchoix2.on('click',function() {
     if (iTexte==3) {
         iTexte+=2;
         document.getElementById("texte").innerHTML = t[iTexte];
-        document.getElementById("deuxChoixB").style.visibility = "hidden";
+        document.getElementById("troisChoixB").style.visibility = "hidden";
+        document.getElementById("tchoix1").style.visibility = "hidden";
+        document.getElementById("tchoix2").style.visibility = "hidden";
+        document.getElementById("tchoix3").style.visibility = "hidden";
+        iTexte++;
+    }
+})
+tchoix3.on('click',function() {
+    if (iTexte==3) {
+        iTexte+=3;
+        document.getElementById("texte").innerHTML = t[iTexte];
+        document.getElementById("troisChoixB").style.visibility = "hidden";
+        document.getElementById("tchoix1").style.visibility = "hidden";
+        document.getElementById("tchoix2").style.visibility = "hidden";
+        document.getElementById("tchoix3").style.visibility = "hidden";
     }
 })
 //Fin choix It 1
+//Choix It 2------------------------
+
+//Fin choix It 2
