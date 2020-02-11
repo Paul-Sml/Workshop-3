@@ -50,6 +50,7 @@ t[39] = "texte";
 t[40] = "texte";
 //------------------------Fin texte------------------------
 //------------------------Texte choix------------------------
+let tc = [100];
 tc[0] = "salut";
 tc[1] = "choix"; 
 tc[2] = "choix2";
@@ -93,17 +94,17 @@ tc[39] = "texte";
 tc[40] = "texte";
 //------------------------Fin texte choix-------------------------
 //------------------------Avancer dans le dialgue------------------------
-bulle.on('click',function() {
-   // if (iTexte!=2 && iTexte!=3) {
+$('#bulle').on('click',function() {
+    if (iTexte!=2 && iTexte!=3) {
         iTexte ++;
         document.getElementById("texte").innerHTML = t[iTexte];
-//	} 
-  //  if (iTexte==3) {    
-    //    document.getElementById("troisChoixB").style.visibility = "visible";
-      //  document.getElementByclass("choix1").style.visibility = "visible";
-        //document.getElementByclass("choix2").style.visibility = "visible";
-       // document.getElementByclass("choix3").style.visibility = "visible";
-   // }
+    } 
+    if (iTexte==3) {    
+        document.getElementById("troisChoixB").style.visibility = "visible";
+        document.getElementByclass("choix1").style.visibility = "visible";
+        document.getElementByclass("choix2").style.visibility = "visible";
+        document.getElementByclass("choix3").style.visibility = "visible";
+    }
 })
 
 //------------------------Fin avancer dialogue------------------------
