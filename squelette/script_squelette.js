@@ -79,7 +79,7 @@ $('#pac1o1').on('click',function() {
 	}
 })
 //------------------------Fin poc1------------------------
-//Choix It 1------------------------
+//Choix It X------------------------3
 tchoix1.on('click',function() {
 	if (iTexte==3) {
 		iTexte++;
@@ -112,8 +112,8 @@ tchoix3.on('click',function() {
         document.getElementById("tchoix3").style.visibility = "hidden";
     }
 })
-//Fin choix It 1
-//Choix It 2------------------------
+//Fin choix It X------------------------3
+//Choix It X------------------------2
 dchoix1.on('click',function() {
     if (iTexte==8) {
         iTexte++
@@ -133,4 +133,4 @@ dchoix2.on('click',function() {
         document.getElementById("dchoix2").style.visibility = "hidden";
     }
 })
-//Fin choix It 2
+//Fin choix It X------------------------2
