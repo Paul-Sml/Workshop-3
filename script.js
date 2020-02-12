@@ -19,8 +19,8 @@ t[6] = "texte6";
 t[7] = "texte7";
 t[8] = "texte8";
 t[9] = "texte9";
-t[10] = "texte";
-t[11] = "texte";
+t[10] = "texte10";
+t[11] = "texte11";
 t[12] = "texte";
 t[13] = "texte";
 t[14] = "texte";
@@ -160,5 +160,23 @@ tchoix3.on('click',function() {
 })
 //Fin choix It 1
 //Choix It 2------------------------
-
+dchoix1.on('click',function() {
+    if (iTexte==8) {
+        iTexte++
+        document.getElementById("texte").innerHTML = t[iTexte];
+        document.getElementById("deuxChoixB").style.visibility = "hidden";
+        document.getElementById("dchoix1").style.visibility = "hidden";
+        document.getElementById("dchoix2").style.visibility = "hidden";
+        iTexte++;
+    }
+})
+dchoix2.on('click',function() {
+    if (iTexte==8) {
+        iTexte+=2;
+        document.getElementById("texte").innerHTML = t[iTexte];
+        document.getElementById("deuxChoixB").style.visibility = "hidden";
+        document.getElementById("dchoix1").style.visibility = "hidden";
+        document.getElementById("dchoix2").style.visibility = "hidden";
+    }
+})
 //Fin choix It 2
