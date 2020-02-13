@@ -124,3 +124,8 @@ span {
   margin-top: -90px;
 	margin-left: 10px;
 	visibility: hidden;
+}
+
+.music{
+	display: none;
+}

@@ -8,6 +8,7 @@ let dchoix1 = $('#dchoix1');
 let dchoix2 = $('#dchoix2');
 let pac1i = 0;
 let iFond = $('#imageFond');
+let music = $('#music');
 
 //-------------------------Texte------------------------
 let t = [100];
@@ -61,15 +62,20 @@ $('#bulle').on('click',function() {
         iTexte ++;
         document.getElementById("texte").innerHTML = t[iTexte];
     }
+    if (iTexte==1){music.attr('src','assets/intro.ogg');}
     if (iTexte==2){iFond.attr('src','assets/villeRiche.png');}
-    if (iTexte==3){iFond.attr('src','assets/basQuartier.png');}
+    if (iTexte==3){
+        iFond.attr('src','assets/basQuartier.png');
+        music.trigger('pause');
+        music.prop("currentTime",0);
+    }
     if (iTexte==6) {
         document.getElementById("deuxChoixB").style.visibility = "visible";
         document.getElementById("dchoix1").style.visibility = "visible";
         document.getElementById("dchoix2").style.visibility = "visible";
         iFond.attr('src','assets/zzz.png');
     }
-    }
+    
     if (iTexte==9){iTexte=14;iFond.attr('src','assets/usine.png');}
     if (iTexte==12){iTexte=14;iFond.attr('src','assets/usine.png');}
     if (iTexte==15){
