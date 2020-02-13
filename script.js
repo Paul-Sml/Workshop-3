@@ -8,6 +8,8 @@ let dchoix1 = $('#dchoix1');
 let dchoix2 = $('#dchoix2');
 let pac1i = 0;
 let iFond = $('#imageFond');
+let iPerso =$('#perso');
+let iPerso2 =$('#perso2');
 
 //-------------------------Texte------------------------
 let t = [290];
@@ -303,14 +305,19 @@ $('#bulle').on('click',function() {
     }
     if (iTexte==2){iFond.attr('src','assets/villeRiche.png');}
     if (iTexte==3){iFond.attr('src','assets/basQuartier.png');}
+    if (iTexte==4){iFond.attr('src','assets/foret.png');}
+    if (iTexte==5){iFond.attr('src','assets/raie.gif');}
     if (iTexte==6) {
         document.getElementById("deuxChoixB").style.visibility = "visible";
         document.getElementById("dchoix1").style.visibility = "visible";
         document.getElementById("dchoix2").style.visibility = "visible";
         iFond.attr('src','assets/zzz.png');
+        iPerso.attr('src','assets/garcon.png');
+
     }
     if (iTexte==9){iTexte=14;iFond.attr('src','assets/usine.png');}
     if (iTexte==12){iTexte=14;iFond.attr('src','assets/usine.png');}
+    if (iTexte==13){iFond.attr('src','assets/usine.png');}
     if (iTexte==15){
         document.getElementById("deuxChoixB").style.visibility = "visible";
         document.getElementById("1").innerHTML = "Demander au contremaître Gareth s'il sait ou est Lucy";
@@ -323,6 +330,40 @@ $('#bulle').on('click',function() {
         document.getElementById("3").innerHTML = "Que se passe t-il avec le personnel ?";
         document.getElementById("4").innerHTML = "Je n’ai pas envie de risquer ma peau pour une machine ! Tu n’as qu’à y aller toi.";
         document.getElementById("5").innerHTML = "J’y vais tout de suite m’sieur !";
+        document.getElementById("tchoix1").style.visibility = "visible";
+        document.getElementById("tchoix2").style.visibility = "visible";
+        document.getElementById("tchoix3").style.visibility = "visible";
+    }
+    if (iTexte==22){iFond.attr('src','assets/interieur_Raie.png');}
+    if (iTexte==32) {
+        document.getElementById("deuxChoixB").style.visibility = "visible";
+        document.getElementById("1").innerHTML = "Y aller discrètement";
+        document.getElementById("2").innerHTML = "Y aller en courant pour lui porter assistance";
+        document.getElementById("dchoix1").style.visibility = "visible";
+        document.getElementById("dchoix2").style.visibility = "visible";
+    }
+    if (iTexte==40) {    
+        document.getElementById("troisChoixB").style.visibility = "visible";
+        document.getElementById("3").innerHTML = "Se montrer et protester";
+        document.getElementById("4").innerHTML = "Se cacher et écouter";
+        document.getElementById("5").innerHTML = "Aller voir Gareth, le seul contremaître en qui vous avez confiance";
+        document.getElementById("tchoix1").style.visibility = "visible";
+        document.getElementById("tchoix2").style.visibility = "visible";
+        document.getElementById("tchoix3").style.visibility = "visible";
+    }
+    if (iTexte==62){iFond.attr('src','assets/cellule.png');}
+    if (iTexte==71){iFond.attr('src','assets/maisonGareth.png');}
+    if (iTexte==66){iTexte=73;}
+    if (iTexte==85){iFond.attr('src','assets/coucherG.png');}
+    if (iTexte==86){iFond.attr('src','assets/dodoG.png');}
+    if (iTexte==89){iFond.attr('src','assets/coucherG.png');}
+    if (iTexte==100){iFond.attr('src','assets/temple.png');}
+    if (iTexte==118){iFond.attr('src','assets/maisonGareth.png');}
+    if (iTexte==150) {    
+        document.getElementById("troisChoixB").style.visibility = "visible";
+        document.getElementById("3").innerHTML = "Refuser catégoriquement";
+        document.getElementById("4").innerHTML = "Faire semblant d'accepter";
+        document.getElementById("5").innerHTML = "Accepter sa proposition";
         document.getElementById("tchoix1").style.visibility = "visible";
         document.getElementById("tchoix2").style.visibility = "visible";
         document.getElementById("tchoix3").style.visibility = "visible";
@@ -380,7 +421,9 @@ dchoix2.on('click',function() {
         document.getElementById("dchoix2").style.visibility = "hidden";
         document.getElementById("bulle").style.visibility = "hidden";
         iFond.attr('src','assets/reveil.png');
+        iPerso.attr('src','assets/garcon.png');
     }
+
 })
 //Fin choix It 1------------------------2
 //------------------------Point and click 1------------------------
