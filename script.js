@@ -56,17 +56,22 @@ t[40] = "texte";
 
 //------------------------Avancer dans le dialgue------------------------
 $('#bulle').on('click',function() {
+    if (iTexte==13){iFond.attr('src','assets/usine.png');}
     if (iTexte!=6 && iTexte!=10 && iTexte!=15 && iTexte != 18) {
         iTexte ++;
         document.getElementById("texte").innerHTML = t[iTexte];
     }
+    if (iTexte==2){iFond.attr('src','assets/villeRiche.png');}
+    if (iTexte==3){iFond.attr('src','assets/basQuartier.png');}
     if (iTexte==6) {
         document.getElementById("deuxChoixB").style.visibility = "visible";
         document.getElementById("dchoix1").style.visibility = "visible";
         document.getElementById("dchoix2").style.visibility = "visible";
+        iFond.attr('src','assets/zzz.png');
     }
-    if (iTexte==9){iTexte=14}
-    if (iTexte==12){iTexte=14}
+    }
+    if (iTexte==9){iTexte=14;iFond.attr('src','assets/usine.png');}
+    if (iTexte==12){iTexte=14;iFond.attr('src','assets/usine.png');}
     if (iTexte==15){
         document.getElementById("deuxChoixB").style.visibility = "visible";
         document.getElementById("1").innerHTML = "Demander au contremaître Gareth s'il sait ou est Lucy"
@@ -106,7 +111,7 @@ dchoix2.on('click',function() {
         document.getElementById("dchoix1").style.visibility = "hidden";
         document.getElementById("dchoix2").style.visibility = "hidden";
         document.getElementById("bulle").style.visibility = "hidden";
-        iFond.attr('src','assets/fond.png');
+        iFond.attr('src','assets/reveil.png');
     }
 })
 //Fin choix It 1------------------------2
