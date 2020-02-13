@@ -1,6 +1,6 @@
 //------------------------Initialisation------------------------
 let bulle = $('#bulle');
-let iTexte = 0;
+let iTexte = 17;
 let tchoix1 = $('#tchoix1');
 let tchoix2 = $('#tchoix2');
 let tchoix3 = $('#tchoix3');
@@ -325,7 +325,10 @@ $('#bulle').on('click',function() {
         document.getElementById("2").innerHTML = "Ne pas perdre de temps et aller travailler";
         document.getElementById("dchoix1").style.visibility = "visible";
         document.getElementById("dchoix2").style.visibility = "visible";
+        iPerso2.attr('src','assets/vide.png');
+        iPerso2.attr('src','assets/fille.png');
     }
+
     if (iTexte==18) {    
         document.getElementById("troisChoixB").style.visibility = "visible";
         document.getElementById("3").innerHTML = "Que se passe t-il avec le personnel ?";
@@ -334,8 +337,11 @@ $('#bulle').on('click',function() {
         document.getElementById("tchoix1").style.visibility = "visible";
         document.getElementById("tchoix2").style.visibility = "visible";
         document.getElementById("tchoix3").style.visibility = "visible";
+        iPerso.attr('src','assets/garcon.png');
+        iPerso2.attr('src','assets/fille.png');
     }
-    if (iTexte==22){iFond.attr('src','assets/interieur_Raie.png');}
+    
+    if (iTexte==22){iFond.attr('src','assets/interieur_Raie.png');iPerso2.attr('src','assets/vide.png');iPerso.attr('src','assets/garcon.png')}
     if (iTexte==32) {
         document.getElementById("deuxChoixB").style.visibility = "visible";
         document.getElementById("1").innerHTML = "Y aller discrètement";
@@ -350,8 +356,9 @@ $('#bulle').on('click',function() {
         document.getElementById("5").innerHTML = "Aller voir Gareth, le seul contremaître en qui vous avez confiance";
         document.getElementById("tchoix1").style.visibility = "visible";
         document.getElementById("tchoix2").style.visibility = "visible";
-        document.getElementById("tchoix3").style.visibility = "visible";
+        document.getElementById("tchoix3").style.visibility = "visible";     
     }
+    if (iTexte==41){iPerso2.attr('src','assets/fille.png');}
     if (iTexte==62){iFond.attr('src','assets/cellule.png');}
     if (iTexte==71){iFond.attr('src','assets/maisonGareth.png');}
     if (iTexte==66){iTexte=73;}
@@ -535,6 +542,7 @@ tchoix1.on('click',function() {
         document.getElementById("tchoix1").style.visibility = "hidden";
         document.getElementById("tchoix2").style.visibility = "hidden";
         document.getElementById("tchoix3").style.visibility = "hidden";
+        iPerso2.attr('src','assets/fille.png');
     }
 })
 tchoix2.on('click',function() {
@@ -545,7 +553,8 @@ tchoix2.on('click',function() {
         document.getElementById("tchoix1").style.visibility = "hidden";
         document.getElementById("tchoix2").style.visibility = "hidden";
         document.getElementById("tchoix3").style.visibility = "hidden";
-    }
+        iPerso2.attr('src','assets/fille.png');
+            }
 })
 tchoix3.on('click',function() {
     if (iTexte==40) {
@@ -555,6 +564,7 @@ tchoix3.on('click',function() {
         document.getElementById("tchoix1").style.visibility = "hidden";
         document.getElementById("tchoix2").style.visibility = "hidden";
         document.getElementById("tchoix3").style.visibility = "hidden";
+        iPerso2.attr('src','assets/fille.png');
     }
 })
 //Fin choix It 5------------------------3
