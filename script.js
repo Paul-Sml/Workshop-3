@@ -26,14 +26,14 @@ t[11] = "Je vais en profiter pour aller à l’usine en avance, ça me permettra
 t[12] = "Tiens ! Qu’est-ce que tu fais là petit ? Tu es en avance ? C’est parfait ! Lucy est absente aujourd’hui, mais si tu te mets à travailler maintenant, je te laisserai quelques minutes de plus en pause ce midi.";
 t[13] = "Ces news sont étrange... Bon allez, c'est l'heure de partir";
 t[14] = "Salut petit, va à ton poste, et pas de bêtises !";
-t[15] = "texte15";
-t[16] = "texte";
-t[17] = "texte";
-t[18] = "texte";
-t[19] = "texte";
-t[20] = "texte";
-t[21] = "texte";
-t[22] = "texte";
+t[15] = "Tiens, Lucy n’est pas là ?";
+t[16] = "Je ne sais pas petit, tu devrais retourner travailler, sinon tu vas te faire remonter les bretelles, et moi aussi en prime.";
+t[17] = "Je ferais mieux de travailler, Chuck me surveille de très près en ce moment.";
+t[18] = "Petit ! Au lieu de te tourner les pouces, j’ai besoin d’un gamin pour aller remettre une machine en route. Fais gaffe, il manque une grille sur un des conduits, ne tombe pas dedans tu risques de rester bloqué.";
+t[19] = "Te mêle pas de ça ! Je te dis de réparer la machine, tu le fais. Arrête de te poser des questions, t’es pas payé pour réfléchir.";
+t[20] = "Je vais t’apprendre à respecter tes supérieurs, sale mioche ! Non seulement tu vas y aller, mais en plus je vais te supprimer ta paye du jour !";
+t[21] = "Une fois la machine réparée, vous décidez de la redémarrer pour voir si tout est bien en ordre. Le bruit assourdissant et le fracas qu’elle produit en démarrant vous surprennent tellement que vous reculez sans regarder derrière vous. Vous tombez et vous cognez la tête, ce qui vous plonge dans l’inconscience.";
+t[22] = "Vous vous réveillez dans une flaque de fluide noirâtre";
 t[23] = "texte";
 t[24] = "texte";
 t[25] = "texte";
@@ -57,7 +57,7 @@ t[40] = "texte";
 //------------------------Avancer dans le dialgue------------------------
 $('#bulle').on('click',function() {
     if (iTexte==13){iFond.attr('src','assets/usine.png');}
-    if (iTexte!=6 && iTexte!=10) {
+    if (iTexte!=6 && iTexte!=10 && iTexte!=15 && iTexte != 18) {
         iTexte ++;
         document.getElementById("texte").innerHTML = t[iTexte];
     }
@@ -69,8 +69,28 @@ $('#bulle').on('click',function() {
         document.getElementById("dchoix2").style.visibility = "visible";
         iFond.attr('src','assets/zzz.png');
     }
+    }
     if (iTexte==9){iTexte=14;iFond.attr('src','assets/usine.png');}
     if (iTexte==12){iTexte=14;iFond.attr('src','assets/usine.png');}
+    if (iTexte==15){
+        document.getElementById("deuxChoixB").style.visibility = "visible";
+        document.getElementById("1").innerHTML = "Demander au contremaître Gareth s'il sait ou est Lucy"
+        document.getElementById("2").innerHTML = "Ne pas perdre de temps et aller travailler"
+        document.getElementById("dchoix1").style.visibility = "visible";
+        document.getElementById("dchoix2").style.visibility = "visible";
+    }
+    if (iTexte==18) {    
+        document.getElementById("troisChoixB").style.visibility = "visible";
+        document.getElementById("3").innerHTML = "Que se passe t-il avec le personnel ?"
+        document.getElementById("4").innerHTML = "Je n’ai pas envie de risquer ma peau pour une machine ! Tu n’as qu’à y aller toi."
+        document.getElementById("5").innerHTML = "J’y vais tout de suite m’sieur !"
+        document.getElementById("tchoix1").style.visibility = "visible";
+        document.getElementById("tchoix2").style.visibility = "visible";
+        document.getElementById("tchoix3").style.visibility = "visible";
+    }
+    //Italic
+    if (iTexte==21 || iTexte==22) {document.getElementById("texte").style.fontStyle = "italic";}else{document.getElementById("texte").style.fontStyle = "normal";}
+    //Fin italic
 })
 //------------------------Fin avancer dialogue------------------------
 //Choix It 1------------------------2
@@ -109,12 +129,65 @@ $('#pac1o2').on('click',function() {
             iTexte++;
             document.getElementById("bulle").style.visibility = "visible";
             document.getElementById("texte").innerHTML = t[iTexte];
-           
        }else {
         iTexte+=3;
         document.getElementById("texte").innerHTML = t[iTexte];
-        
+        document.getElementById("bulle").style.visibility = "visible";
        }
     }
 })
 //------------------------Fin poc1------------------------
+//Choix It 2------------------------2
+dchoix1.on('click',function() {
+    if (iTexte==15) {
+        iTexte++
+        document.getElementById("texte").innerHTML = t[iTexte];
+        document.getElementById("deuxChoixB").style.visibility = "hidden";
+        document.getElementById("dchoix1").style.visibility = "hidden";
+        document.getElementById("dchoix2").style.visibility = "hidden";
+        iTexte++;
+    }
+})
+dchoix2.on('click',function() {
+    if (iTexte==15) {
+        iTexte+=2;
+        document.getElementById("texte").innerHTML = t[iTexte];
+        document.getElementById("deuxChoixB").style.visibility = "hidden";
+        document.getElementById("dchoix1").style.visibility = "hidden";
+        document.getElementById("dchoix2").style.visibility = "hidden";
+    }
+})
+//Fin choix It 2------------------------2
+//Choix It 3------------------------3
+tchoix1.on('click',function() {
+    if (iTexte==18) {
+        iTexte++;
+        document.getElementById("texte").innerHTML = t[iTexte];
+        document.getElementById("troisChoixB").style.visibility = "hidden";
+        document.getElementById("tchoix1").style.visibility = "hidden";
+        document.getElementById("tchoix2").style.visibility = "hidden";
+        document.getElementById("tchoix3").style.visibility = "hidden";
+        iTexte++;
+    }
+})
+tchoix2.on('click',function() {
+    if (iTexte==18) {
+        iTexte+=2;
+        document.getElementById("texte").innerHTML = t[iTexte];
+        document.getElementById("troisChoixB").style.visibility = "hidden";
+        document.getElementById("tchoix1").style.visibility = "hidden";
+        document.getElementById("tchoix2").style.visibility = "hidden";
+        document.getElementById("tchoix3").style.visibility = "hidden";
+    }
+})
+tchoix3.on('click',function() {
+    if (iTexte==18) {
+        iTexte+=3;
+        document.getElementById("texte").innerHTML = t[iTexte];
+        document.getElementById("troisChoixB").style.visibility = "hidden";
+        document.getElementById("tchoix1").style.visibility = "hidden";
+        document.getElementById("tchoix2").style.visibility = "hidden";
+        document.getElementById("tchoix3").style.visibility = "hidden";
+    }
+})
+//Fin choix It 3------------------------3
