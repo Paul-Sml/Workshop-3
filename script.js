@@ -1,6 +1,6 @@
 //------------------------Initialisation------------------------
 let bulle = $('#bulle');
-let iTexte = 144;
+let iTexte = 0;
 let tchoix1 = $('#tchoix1');
 let tchoix2 = $('#tchoix2');
 let tchoix3 = $('#tchoix3');
@@ -8,6 +8,8 @@ let dchoix1 = $('#dchoix1');
 let dchoix2 = $('#dchoix2');
 let pac1i = 0;
 let iFond = $('#imageFond');
+let iPerso =$('#perso');
+let iPerso2 =$('#perso2');
 
 //-------------------------Texte------------------------
 let t = [100];
@@ -257,6 +259,8 @@ $('#bulle').on('click',function() {
         document.getElementById("dchoix1").style.visibility = "visible";
         document.getElementById("dchoix2").style.visibility = "visible";
         iFond.attr('src','assets/zzz.png');
+        iPerso.attr('src','assets/garcon.png');
+
     }
     if (iTexte==9){iTexte=14;iFond.attr('src','assets/usine.png');}
     if (iTexte==12){iTexte=14;iFond.attr('src','assets/usine.png');}
@@ -295,9 +299,11 @@ $('#bulle').on('click',function() {
         document.getElementById("tchoix3").style.visibility = "visible";
     }
     if (iTexte==62){iFond.attr('src','assets/cellule.png');}
-    if (iTexte==64){iFond.attr('src','assets/maisonGareth.png');}
+    if (iTexte==71){iFond.attr('src','assets/maisonGareth.png');}
     if (iTexte==66){iTexte=73;}
     if (iTexte==85){iFond.attr('src','assets/coucherG.png');}
+    if (iTexte==86){iFond.attr('src','assets/dodoG.png');}
+    if (iTexte==89){iFond.attr('src','assets/coucherG.png');}
     if (iTexte==100){iFond.attr('src','assets/temple.png');}
     if (iTexte==118){iFond.attr('src','assets/maisonGareth.png');}
     if (iTexte==150) {    

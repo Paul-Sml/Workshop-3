@@ -110,7 +110,6 @@ span {
 
 #tchoix2 {
 	width: 1880px; height: 36px;
-	border: 1px solid green;
 	z-index: 4;
 	margin-top: -90px;
 	margin-left: 10px;
@@ -119,9 +118,18 @@ span {
 
 #tchoix3 {
 	width: 1880px; height: 36px;
-	border: 1px solid green;
 	z-index: 4;
  	 margin-top: -90px;
 	margin-left: 10px;
 	visibility: hidden;
+}
+
+#perso{
+	margin-top: -1080px;
+	margin-left: 200px;
+}
+
+#perso2{
+	margin-top: -1080px;
+	margin-left: 1320px;
 }
