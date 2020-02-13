@@ -6,7 +6,7 @@ var config = {
     default: 'arcade',
     arcade: {
       gravity: {y: 1000},
-      debug: true
+      debug: false
     }
   },
   scene: {
@@ -19,8 +19,13 @@ var config = {
 
 var game = new Phaser.Game(config);
 
+var final;
+
 var score = 0;
 var scoretexte;
+var coeur;
+var nbvie = 3;
+var vietexte;
 var joueur1;
 var policier1;
 var policier2;
@@ -29,6 +34,8 @@ var policier4;
 var savepolicier = 1;
 var savesaut = 0;
 var veriftouche = 1;
+var textegameover;
+var textegameover2;
 
 function init() {
 
@@ -43,40 +50,64 @@ function init() {
 function preload() {
 
   // chargement fond
-  this.load.image('background','assets/background.jpg');
+  this.load.image('background','assets/background.png');
 
   // chargement sol
-  this.load.image('sol1','assets/plateforme.jpg');
-  this.load.image('sol2','assets/plateforme.jpg');
-  this.load.image('sol3','assets/plateforme.jpg');
-  this.load.image('sol4','assets/plateforme.jpg');
-  this.load.image('sol5','assets/plateforme.jpg');
+  this.load.image('sol1','assets/plateforme.png');
+  this.load.image('sol2','assets/plateforme.png');
+  this.load.image('sol3','assets/plateforme.png');
+  this.load.image('sol4','assets/plateforme.png');
+  this.load.image('sol5','assets/plateforme.png');
 
   // chargement plateformes
-  this.load.image('plateforme1','assets/plateforme.jpg');
-  this.load.image('plateforme2','assets/plateforme.jpg');
-  this.load.image('plateforme3','assets/plateforme.jpg');
-  this.load.image('plateforme4','assets/plateforme.jpg');
-  this.load.image('plateforme5','assets/plateforme.jpg');
-  this.load.image('plateforme6','assets/plateforme.jpg');
-  this.load.image('plateforme7','assets/plateforme.jpg');
-  this.load.image('plateforme8','assets/plateforme.jpg');
-  this.load.image('plateforme9','assets/plateforme.jpg');
+  this.load.image('plateforme1','assets/plateforme.png');
+  this.load.image('plateforme2','assets/plateforme.png');
+  this.load.image('plateforme3','assets/plateforme.png');
+  this.load.image('plateforme4','assets/plateforme.png');
+  this.load.image('plateforme5','assets/plateforme.png');
+  this.load.image('plateforme6','assets/plateforme.png');
+  this.load.image('plateforme7','assets/plateforme.png');
+  this.load.image('plateforme8','assets/plateforme.png');
+  this.load.image('plateforme9','assets/plateforme.png');
 
   // chargement petites plateformes
-  this.load.image('petiteplateforme1','assets/petiteplateforme.jpg');
-  this.load.image('petiteplateforme2','assets/petiteplateforme.jpg');
-  this.load.image('petiteplateforme3','assets/petiteplateforme.jpg');
-  this.load.image('petiteplateforme4','assets/petiteplateforme.jpg');
+  this.load.image('petiteplateforme1','assets/petiteplateforme.png');
+  this.load.image('petiteplateforme2','assets/petiteplateforme.png');
+  this.load.image('petiteplateforme3','assets/petiteplateforme.png');
+  this.load.image('petiteplateforme4','assets/petiteplateforme.png');
+
+  // chargement herbes
+  this.load.image('herbes1','assets/ajouts/herbes.png');
+  this.load.image('herbes2','assets/ajouts/herbes.png');
+  this.load.image('herbes3','assets/ajouts/herbes.png');
+  this.load.image('herbes4','assets/ajouts/herbes.png');
+  this.load.image('herbes5','assets/ajouts/herbes.png');
+  this.load.image('herbes6','assets/ajouts/herbes.png');
+  this.load.image('herbes7','assets/ajouts/herbes.png');
+  this.load.image('herbes8','assets/ajouts/herbes.png');
+  this.load.image('herbes9','assets/ajouts/herbes.png');
+  this.load.image('herbes10','assets/ajouts/herbes.png');
+
+  // chargement arbres
+  this.load.image('arbre1','assets/ajouts/arbre.png');
+  this.load.image('arbre2','assets/ajouts/arbre.png');
+  this.load.image('arbre3','assets/ajouts/arbre.png');
+  this.load.image('arbre4','assets/ajouts/arbre.png');
+
+  // chargement lampadaires
+  this.load.image('lampadaire1','assets/ajouts/lampadaire.png');
+  this.load.image('lampadaire2','assets/ajouts/lampadaire.png');
 
   // chargement perso1
-  this.load.image('perso1','assets/perso1.jpg');
+  this.load.spritesheet('perso1','assets/perso1.png',{frameWidth: 27, frameHeight: 42});
+  this.load.spritesheet('droite1','assets/droite1.png',{frameWidth: 25.5, frameHeight: 41});
+
 
   // chargement boites aux lettres
-  this.load.image('bal1','assets/boite_aux_lettres.jpg');
-  this.load.image('bal2','assets/boite_aux_lettres.jpg');
-  this.load.image('bal3','assets/boite_aux_lettres.jpg');
-  this.load.image('bal4','assets/boite_aux_lettres.jpg');
+  this.load.image('bal1','assets/boite_aux_lettres.png');
+  this.load.image('bal2','assets/boite_aux_lettres.png');
+  this.load.image('bal3','assets/boite_aux_lettres.png');
+  this.load.image('bal4','assets/boite_aux_lettres.png');
 
   // chargement policiers
   this.load.image('policier1','assets/policier.png');
@@ -90,6 +121,14 @@ function preload() {
   // chargement lettre
   this.load.image('lettre','assets/lettre.png');
 
+  // chargement coeur
+  this.load.spritesheet('coeur','assets/coeur.png',{frameWidth: 40, frameHeight: 40});
+
+
+  // chargement audio
+  this.load.audio('BackgroundMusic', 'audio/BackgroundMusic.ogg');
+  this.load.audio('Mort', 'audio/Mort.ogg');
+  this.load.audio('Lettre', 'audio/Lettre.ogg')
 
 }
 
@@ -99,7 +138,7 @@ function preload() {
 function create() {
 
   // image de fond
-  //this.add.image(960,540,'background');
+  this.add.image(960,540,'background');
 
   // groupe plateformes
   platformes = this.physics.add.staticGroup();
@@ -112,11 +151,11 @@ function create() {
   platformes.create(1800,1065,'sol5');
 
   // sortie
-  sortie = this.physics.add.image(190,235,'sortie').setScale(0.5);
+  sortie = this.physics.add.image(190,245,'sortie').setScale(0.5);
 
   // placement plateformes
-  platformes.create(600,915,'plateforme1');
-  platformes.create(800,915,'plateforme2');
+  platformes.create(700,915,'plateforme1');
+  platformes.create(900,915,'plateforme2');
   platformes.create(1500,765,'plateforme3');
   platformes.create(650,565,'plateforme4');
   platformes.create(1200,415,'plateforme5');
@@ -132,6 +171,28 @@ function create() {
   platformes.create(150,725,'petiteplateforme2');
   platformes.create(200,300,'petiteplateforme3');
   platformes.create(1800,550,'petiteplateforme4');
+
+  // placement herbes
+  this.add.image(1556,1034,'herbes1');
+  this.add.image(1300,1034,'herbes2');
+  this.add.image(200,1034,'herbes3');
+  this.add.image(700,884,'herbes4');
+  this.add.image(580,534,'herbes5');
+  this.add.image(650,164,'herbes6');
+  this.add.image(906,164,'herbes7');
+  this.add.image(1200,384,'herbes8');
+  this.add.image(1550,734,'herbes9');
+  this.add.image(1650,220,'herbes10');
+
+  // placement arbre
+  this.add.image(1800,962,'arbre1');
+  this.add.image(1300,310,'arbre2');
+  this.add.image(600,90,'arbre3');
+  this.add.image(550,812,'arbre4');
+
+  //placement lampadaires
+  this.add.image(80,636,'lampadaire1');
+  this.add.image(1750,462,'lampadaire2');
 
   // placement boites aux lettres
   bal1 = this.physics.add.image(140,690,'bal1');
@@ -161,7 +222,7 @@ function create() {
   cursors = this.input.keyboard.createCursorKeys();
 
   // joueur1
-  joueur1 = this.physics.add.image(40,1030,'perso1');
+  joueur1 = this.physics.add.sprite(40,900,'perso1');
 	joueur1.setCollideWorldBounds(true);
 	joueur1.body.setGravityY(300);
 	this.physics.add.collider(joueur1,platformes);
@@ -169,12 +230,37 @@ function create() {
   this.physics.add.collider(joueur1,policier2,reset2,null,this);
   this.physics.add.collider(joueur1,policier3,reset3,null,this);
   this.physics.add.collider(joueur1,policier4,reset4,null,this);
+  this.anims.create ({
+    key: 'droite1',
+    frames: this.anims.generateFrameNumbers('droite1'),
+    frameRate: 10,
+    repeat: -1
+  })
+  this.anims.create ({
+    key: 'perso1',
+    frames: this.anims.generateFrameNumbers('perso1'),
+    frameRate: 10,
+    repeat: -1
+  })
+
 
   // lettre
   this.add.image(40,40,'lettre');
 
   // score
   scoretexte = this.add.text(80, 20, '0/4', {fontSize: '50px', fill:'#fff'});
+
+  // coeur
+  this.add.sprite(1880,40,'coeur');
+  this.anims.create ({
+    key: 'coeur',
+    frames: this.anims.generateFrameNumbers('coeur'),
+    frameRate: 10,
+    repeat: -1
+  })
+
+  // vie restante
+  vietexte = this.add.text(1820, 20, '3', {fontSize: '50px', fill:'#fff'});
 
   // collisions boite aux lettres
   this.physics.add.collider(joueur1,bal1,lettrepostee1,null,this);
@@ -186,6 +272,12 @@ function create() {
   this.physics.add.collider(sortie,platformes);
   this.physics.add.collider(joueur1,sortie,fin,null,this);
 
+
+  // musiques
+  this.sound.add('BackgroundMusic');
+  this.sound.play('BackgroundMusic',{volume: 0.4, loop: true});
+  this.sound.add('Mort');
+  this.sound.add('Lettre');
 }
 
 
@@ -217,15 +309,15 @@ function update() {
       //joueur1.anims.play('stop', true);
   	}*/
   	if (cursors.right.isDown) {
-  		//joueur1.anims.play('right', true);
+  		joueur1.anims.play('droite1', true);
   		joueur1.setVelocityX(300);
   		joueur1.setFlipX(false);
   	} else if (cursors.left.isDown) {
   		joueur1.setVelocityX(-300);
-  		//joueur1.anims.play('right', true);
+  		joueur1.anims.play('droite1', true);
   		joueur1.setFlipX(true);
   	} else  {
-  		//joueur1.anims.play('stop', true);
+  		joueur1.anims.play('perso1');
   		joueur1.setVelocityX(0);
   	}
 
@@ -271,7 +363,14 @@ function update() {
   })
     }
 
-
+    // STEVENN
+    if (nbvie == 0) {
+      textegameover = this.add.text(160, 480, 'Vous avez utilisé toutes vos vies,', {fontSize: '75px', fill:'#fff'});
+      textegameover2 = this.add.text(190, 560, 'vous ne validez pas cette étape.', {fontSize: '75px', fill:'#fff'});
+      gameOver=true;
+      joueur1.setTint(0xff0000);
+      this.physics.pause();
+    }
 
 
 }
@@ -281,6 +380,9 @@ function reset1(joueur1, policier1){
   joueur1.setPosition(40,1000);
   policier1.setVelocityX(0);
   policier1.setVelocityY(-50);
+  nbvie -= 1;
+  vietexte.setText(nbvie);
+  this.sound.play('Mort');
   /*score = 0;
   scoretexte.setText(score+'/4');
   bal1.enableBody(true,true).setPosition(140,690);
@@ -292,6 +394,9 @@ function reset2(joueur1, policier2){
   joueur1.setPosition(40,1000);
   policier2.setVelocityX(0);
   policier2.setVelocityY(-100);
+  nbvie -= 1;
+  vietexte.setText(nbvie);
+  this.sound.play('Mort');
   /*score = 0;
   scoretexte.setText(score+'/4');*/
 }
@@ -299,6 +404,9 @@ function reset3(joueur1, policier3){
   joueur1.setPosition(40,1000);
   policier3.setVelocityX(0);
   policier3.setVelocityY(-100);
+  nbvie -= 1;
+  vietexte.setText(nbvie);
+  this.sound.play('Mort');
   /*score = 0;
   scoretexte.setText(score+'/4');*/
 }
@@ -306,6 +414,9 @@ function reset4(joueur1, policier4){
   joueur1.setPosition(40,1000);
   policier4.setVelocityX(0);
   policier4.setVelocityY(-100);
+  nbvie -= 1;
+  vietexte.setText(nbvie);
+  this.sound.play('Mort');
   /*score = 0;
   scoretexte.setText(score+'/4');*/
 }
@@ -314,26 +425,32 @@ function lettrepostee1(joueur1, bal1){
 	  bal1.disableBody(true,true);
     score += 1;
 	  scoretexte.setText(score+'/4');
+    this.sound.play('Lettre');
 }
 function lettrepostee2(joueur1, bal2){
 	  bal2.disableBody(true,true);
     score += 1;
 	  scoretexte.setText(score+'/4');
+    this.sound.play('Lettre');
 }
 function lettrepostee3(joueur1, bal3){
 	  bal3.disableBody(true,true);
     score += 1;
 	  scoretexte.setText(score+'/4');
+    this.sound.play('Lettre');
 }
 function lettrepostee4(joueur1, bal4){
 	  bal4.disableBody(true,true);
     score += 1;
 	  scoretexte.setText(score+'/4');
+    this.sound.play('Lettre');
 }
 
 
+// STEVENN
 function fin(joueur1, sortie){
   if (score === 4) {
+    final += 1;
     this.physics.pause();
   } else {
     joueur1.setPosition(40,1000);
