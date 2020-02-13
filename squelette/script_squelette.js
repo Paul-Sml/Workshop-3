@@ -116,7 +116,7 @@ tchoix3.on('click',function() {
 //Choix It X------------------------2
 dchoix1.on('click',function() {
     if (iTexte==8) {
-        iTexte++;
+        iTexte++
         document.getElementById("texte").innerHTML = t[iTexte];
         document.getElementById("deuxChoixB").style.visibility = "hidden";
         document.getElementById("dchoix1").style.visibility = "hidden";
