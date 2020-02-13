@@ -1,16 +1,8 @@
 body{
-	margin:0px;
-	background-color: black
+	margin: 0px;
+	background-color: #000;
 }
 
-.bulle {
-  /*transform: translate(-50%, -50%);
-  top: 80%; left: 50%;*/
-  position: absolute;
-  z-index: 2;
-  margin-top: -280px;
-  margin-left: 60px;
-}
 #fond {
   z-index: 1;
   transform: translate(-50%, -50%);
@@ -19,13 +11,132 @@ body{
 }
 
 
+#bulle {
+  position: absolute;
+  z-index: 2;
+  margin-top: -170px;
+  margin-left: 10px;
+}
+
 #texte {
-	z-index:3;
+	z-index: 3;
 	color: white;
-	font-size: 38px;
+	font-size: 32px;
+	font-family: Verdana;
 	position: absolute;
-	margin-top: -240px;
-	margin-left: 20px;
-	margin-right: 20px;
+	margin-top: -140px;
+	margin-left: 24px;
+	margin-right: 24px;
 	word-break: break-word;
 }
+
+#deuxChoixB {
+  position: absolute;
+  z-index: 2;
+  margin-top: -290px;
+  margin-left: 10px;
+  visibility: hidden;
+}
+#troisChoixB {
+	position: absolute;
+	visibility: hidden;
+	margin-top: -350px;
+	margin-left: 10px;
+}
+
+span {
+	z-index:3;
+	color: white;
+	font-size: 32px;
+	font-family: Verdana;
+	position: absolute;
+	margin-top: -3px;
+	margin-left: 5px;
+	margin-right: 24px;
+	word-break: break-word;
+}
+
+/*point and click*/
+
+#cliquables {z-index: 4;}
+
+/*pac1*/
+
+#pac1o1 {
+  width: 50px; height: 50px;
+  border: 15px solid green;
+  position: absolute;
+  top: 500px;
+  left: 300px;
+}
+
+#pac1o2 {
+  width: 50px; height: 50px;
+  border: 15px solid green;
+  position: absolute;
+  top: 500px;
+  left: 1300px;
+}
+
+/*finpac1*/
+/*fin point and click*/
+
+#dchoix1 {
+	width: 1880px; height: 36px;
+	border: 1px solid green;
+	z-index: 4;
+	margin-top: -50px;
+	margin-left: 10px;
+	visibility: hidden;
+}
+
+#dchoix2 {
+	width: 1880px; height: 36px;
+	border: 1px solid green;
+	z-index: 4;
+	margin-top: -90px;
+	margin-left: 10px;
+	visibility: hidden;
+}
+
+#tchoix1 {
+	width: 1880px; height: 36px;
+	border: 1px solid green;
+	z-index: 4;
+	margin-top: -50px;
+	margin-left: 10px;
+	visibility: hidden;
+}
+
+#tchoix2 {
+	width: 1880px; height: 36px;
+	border: 1px solid green;
+	z-index: 4;
+	margin-top: -90px;
+	margin-left: 10px;
+	visibility: hidden;
+}
+
+#tchoix3 {
+	width: 1880px; height: 36px;
+	border: 1px solid green;
+	z-index: 4;
+  margin-top: -90px;
+	margin-left: 10px;
+	visibility: hidden;
+}
+
+/* fond */
+
+#reveil{
+	display: default;
+}
+
+#interieur_Raie{
+	display: none;
+}
+
+#temple{
+	display: none;
+}
+
