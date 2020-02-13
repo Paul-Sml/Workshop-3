@@ -1,6 +1,6 @@
 //------------------------Initialisation------------------------
 let bulle = $('#bulle');
-let iTexte = 0;
+let iTexte = 144;
 let tchoix1 = $('#tchoix1');
 let tchoix2 = $('#tchoix2');
 let tchoix3 = $('#tchoix3');
@@ -32,32 +32,219 @@ t[17] = "Je ferais mieux de travailler, Chuck me surveille de très près en ce 
 t[18] = "Petit ! Au lieu de te tourner les pouces, j’ai besoin d’un gamin pour aller remettre une machine en route. Fais gaffe, il manque une grille sur un des conduits, ne tombe pas dedans tu risques de rester bloqué.";
 t[19] = "Te mêle pas de ça ! Je te dis de réparer la machine, tu le fais. Arrête de te poser des questions, t’es pas payé pour réfléchir.";
 t[20] = "Je vais t’apprendre à respecter tes supérieurs, sale mioche ! Non seulement tu vas y aller, mais en plus je vais te supprimer ta paye du jour !";
+//puzzle
 t[21] = "Une fois la machine réparée, vous décidez de la redémarrer pour voir si tout est bien en ordre. Le bruit assourdissant et le fracas qu’elle produit en démarrant vous surprennent tellement que vous reculez sans regarder derrière vous. Vous tombez et vous cognez la tête, ce qui vous plonge dans l’inconscience.";
 t[22] = "Vous vous réveillez dans une flaque de fluide noirâtre";
-t[23] = "texte";
-t[24] = "texte";
-t[25] = "texte";
-t[26] = "texte";
-t[27] = "texte";
-t[28] = "texte";
-t[29] = "texte";
-t[30] = "texte";
-t[31] = "texte";
-t[32] = "texte";
-t[33] = "texte";
-t[34] = "texte";
-t[35] = "texte";
-t[36] = "texte";
-t[37] = "texte";
-t[38] = "texte";
-t[39] = "texte";
-t[40] = "texte";
+t[23] = "Cette fois, j’aurais vraiment dû me méfier ! Qu’est ce que c’est que cette chose noire et gluante ? L’odeur est immonde, c’est à peine respirable. Le conduit est trop haut, je ne peux même pas remonter.";
+t[24] = "IL Y A QUELQU’UN ? JE SUIS COINCÉ !";
+t[25] = "......s’il......te..p..plait..";
+t[26] = "Quoi ? Qui est là ? Gareth, c’est vous ?";
+t[27] = "....";
+t[28] = "Mon dieu, j’ai l’impression que les produits toxiques dans lesquels je me suis évanoui me rendent fou. Je dois vite vite sortir d’ici.";
+t[29] = "";
+t[30] = "C’est vraiment grand ici ! Je suis incapable de me repérer.";
+t[31] = "Vous apercevez une lueur de lumière au fond du couloir que vous parcourez depuis quelques minutes. En vous approchant, vous distinguez quelques quintes de toux provenant du même endroit que la lumière. Mais cette toux n’est pas celle d’un vigile de nuit, c’est celle d’un enfant !";
+t[32] = "Vous vous précipitez et vous passez la tête par l’ouverture afin d’observer l’intérieur de la pièce.<br>C’est une sorte d’hôpital de fortune, sur des matelas posés à même le sol, des dizaines d’enfants gisent, plaintifs.<br>Vous reconnaissez Lucy, votre meilleure amie, alitée et au bord de l’inconscience.";
+t[33] = "Mince ! Les gardes ont l'air de m'avoir entendu. Je ferais mieux de me cacher en attendant qu'ils détournent leur attention";
+t[34] = "Lucy, réveille toi ! Qu’est-ce que tu fais ici ? Réponds ! Oh non, elle est inconsciente… Je dois sortir d’ici, cet endroit commence vraiment à me faire peur.";
+t[35] = "J'entend du bruit, je vais me faufiler dans cette porte.";
+t[36] = "Une pièce de maintenance ? Il y a un plan de secours, mais j’ai du mal à le comprendre. Je crois que ces produits toxiques m’ont vraiment embrouillé l’esprit. Ou peut-être que c’est ma chute...";
+//puzzle
+t[37] = "Ah voilà ! Je peux enfin m’en aller d’ici !";
+t[38] = "Suite à ce périple vous rentrez chez vous, vous y apercevez Chuck et un autre contremaître que vous ne connaissez pas qui discutent avec vos parents.";
+t[39] = "...nous sommes désolés…";
+t[40] = "...on a tout fait pour le sauver, mais il est mort...";
+t[41] = "Eh vous ! Qu’est-ce que vous racontez à mes parents ?!"
+t[42] = "Oh mon dieu mon fils ! On te croyait mort…"
+t[43] = "Quelle magnifique nouvelle ! Tu es vivant, petit. On t’a cherché partout, nous aussi on te croyait mort."
+t[44] = "C’est faux ! Je viens de me réveiller, exactement où j’étais tombé. Personne n’est venu me secourir. D’ailleurs, cet endroit était étrange, qu’est-ce qu’il s’y passe ?"
+t[45] = "Je crois que tu as rêvé gamin. Les produits toxiques dans lesquels tu es tombé ont dû te provoquer des hallucinations. Viens avec nous, tu dois voir un médecin très vite. On n’est jamais trop prudents"
+t[46] = "Sûrement pas, je vais très bien ! Vous cachez quelque chose."
+t[47] = "C’est peut être une bonne idée mon chéri, tu as peut être ingéré quelque chose sans t’en rendre compte."
+t[48] = "Mais maman, écoute-moi !"
+t[49] = "Bon ça suffit ! On n’est jamais trop prudent. Viens, sinon l’entreprise sera tenue pour responsable de ta mauvaise santé. Je te rappelle que je suis ton supérieur et que tu me dois respect et obéissance."
+t[50] = "Mais..."
+t[51] = "Ce sera rapide, arrête de te faire prier petit !"
+t[52] = "Ne discute pas. Je ne veux pas que tu tombes malade, vas-y !"
+t[53] = ""
+t[54] = "Qu’est ce qu’ils vont me faire ? C’est vraiment étrange, Chuck n’a jamais été bienveillant envers qui que ce soit"
+t[55] = "Tu as bien failli trop en dire, gamin. J’ai toujours su que tu nous mettrais dans le pétrin à force de te mêler de ce qui ne te regarde pas."
+t[56] = "Pourquoi des enfants sont retenus dans l’entrepôt ? Qu’est-ce que vous manigancez ? Je n’ai rien à vous dire !"
+t[57] = "Qu’as-tu vu dans ce trou ? Essaie pas de me mentir, gamin."
+t[58] = "Je vous ai dit que je n’en parlerais pas avec vous."
+t[59] = "Ecoute, petit. Je ne me suis pas déplacé jusque chez tes parents pour le plaisir. Tu te doutes bien que je ne peux pas me permettre de te laisser partir comme ça. Si tu me dis ce que tu as vu, je ferai mon possible pour plaider en ta faveur auprès de monsieur Poskinov."
+t[60] = "Mais en attendant, je dois t’enfermer pour être sûr que tu ne fasses rien de stupide."
+t[61] = "Il faut que je m’échappe, sinon je ne sais pas ce qu’ils vont me faire..."
+t[62] = "Une fois arrivés, les contremaîtres vous enferment comme ils l’ont dit dans une pièce lugubre isolée du reste de l’usine."
+//puzzle
+t[63] = "Bon, j’ai enfin réussi à me tirer de ce bourbier. Pour enfermer un enfant, ce qu’ils cachent doit être très grave..."
+//puzzle
+t[64] = "Gareth tu es là ? J’ai vraiment besoin de te parler, c’est urgent !"
+t[65] = "William, c’est toi ? Entre, ne fais pas de bruit..."
+t[66] = "En rentrant chez moi, j’ai trouvé les contremaîtres qui essayaient de faire croire à mes parents que j’étais mort. Heureusement, je suis arrivé au même moment ! Ensuite, ils ont convaincu mes parents que je devais les accompagner et ils m’ont enfermé ! Gareth, ils cachent quelque chose ! Tu sais de quoi il s’agit ?"
+t[67] = "... ça s’est passé à l’usine cet après-midi. Votre enfant a été chargé d’aller réparer une machine mais tout ne s’est pas déroulé comme prévu. En redémarrant la machine, il est tombé dans le conduit qui se trouvait derrière lui.. L’endroit dans lequel il est tombé est... inaccessible. Nous n’avons rien pu faire."
+t[68] = "Mon dieu... C’est impossible..."
+t[69] = "Sachez que votre fils était un très bon élément. Nous sommes grandement affectés par sa perte. Au nom de l’entreprise Poskinov, nous vous présentons toutes nos condoléances."
+t[70] = "Mais qu’est-ce qu’ils racontent à mes parents ? Je ne suis pas mort ! C’est étrange.. Ils cachent sûrement quelque chose de grave. Peut être que Gareth est au courant de quelque chose, je devrais aller le voir."
+//puzzle
+t[71] = "Gareth tu es là ? J’ai vraiment besoin de te parler, c’est urgent !"
+t[72] = "Entre, ne fais pas de bruit..."
+t[73] = "Les contremaîtres ont fait croire à mes parents que j’étais mort ! Je ne peux pas rentrer chez moi après ça, ils sauront où me trouver. Je dois comprendre ce qu’il se passe, Lucy a disparue elle aussi. As-tu remarqué quelque chose de louche dans l’entreprise ?"
+t[74] = "Écoute William, je sais pas si je peux te parler de ça… Ne te mêle pas des affaires du patron, crois-moi, j’en sais quelque chose."
+t[75] = "Tu dois m’aider ! J’ai vu des enfants malades enfermés, tu ne peux pas tolérer ça toi aussi !"
+t[76] = "C’est plus compliqué que ça tu sais… Si les autres contremaîtres apprennent que j’ai parlé, je ne sais pas ce qu’ils peuvent lui faire .."
+t[77] = "Faire quoi ?  À qui ? Je ne comprends rien Gareth."
+t[78] = "À ma fille William, à ma fille… Elle est malade et ce sont les seuls à disposer du traitement. Je ne peux me permettre de la perdre."
+t[79] = "Ils te font du chantage ! D’ailleurs, qu’est-ce qui l’a rendue malade ?"
+t[80] = "Tu t’en doutes n’est-ce pas ? La même chose que pour les autres. Seulement, puisque c’est ma fille, ils ne pouvaient pas me la cacher, j’étais déjà au courant de la combine. Donc ils m’ont dit de la garder ici, mais si je parle de sa maladie à qui que ce soit, ils ne me donneront plus de quoi la maintenir en vie."
+t[81] = "Oui Gareth.. J’ai tout vu, la quarantaine, et ces flaques de liquides bizarres dans le ventre de la bête."
+t[82] = "En effet, Abraham Poskinov fait croire que les déchets industriels sont stockés puis jetés hors de Jaya’nah mais il ment… Les personnes que tu as vues en quarantaine, elles sont toutes atteintes d'intoxications dues aux émanations des produits toxiques de l’usine."
+t[83] = "Seulement, les malades constituent en eux-mêmes la preuve que Poskinov a des pratiques douteuses, donc le patron a décidé de les cacher. Puisque les déchets toxiques sont déversés à l’intérieur de Jaya’nah, elle finira par mourir aussi du poison qu’elle est obligée d’ingérer tous les jours."
+t[84] = "Quand j’étais dans le ventre de Jaya’nah, je ressentais une sorte de souffrance permanente. Je m’inquiète autant pour elle que pour mes amis. Je ne veux pas te déranger plus longtemps, Gareth, ta fille a sûrement besoin de soins."
+t[85] = "Et dire que je travaille pour une usine qui va peut-être détruire la ville… En plus, je dois sauver les ouvriers malades enfermés. Pour ce soir, je vais passer la nuit caché, je ne connais qu’un seul endroit où personne ne viendra me chercher..."
+t[86] = "Au moins ici je suis tranquille, personne ne viendra me déranger…"
+t[87] = "J’…ai..besoin….d’aide"
+t[88] = "J’ai…..mal"
+t[89] = "Qui est là ?"
+t[90] = "Tu....tu...comprends... ce que je dis ?.."
+t[91] = "Montre-toi ! Arrête de te cacher !"
+t[92] = "Tu.. ne peux.. me voir... tu vis... sur moi.."
+t[93] = "Jaya’nah ?"
+t[94] = "Trouve... le sanctuaire..."
+t[95] = "Quel sanctuaire ? Je ne comprends pas !"
+t[96] = "...."
+t[97] = "Je ne comprends pas... Qu’est-ce que je dois faire..."
+t[98] = "Tu.. sauras où aller... je.. te l'indi...querais. Rend toi.... à la.. forêt"
+t[99] = ""
+t[100] = "C'est donc ça le sanctuaire ?"
+//puzzle
+t[101] = "Enfin..."
+t[102] = "Où suis-je ?"
+t[103] = "Je t’ai fait venir jusqu’au sanctuaire car c’est le seul moyen pour moi de communiquer avec toi."
+t[104] = "Je vois, mais pourquoi m’avoir emmené ici ?"
+t[105] = "Je ne comprends pas pourquoi, mais tu es le seul de ton espèce à entendre mes plaintes. J’ai besoin de ton aide."
+t[106] = "Je croyais que je devenais fou..."
+t[107] = "Tu n’es pas fou, nous sommes liés. Tu dois m’aider, si tu me sauves, tous ceux que tu connais continueront à vivre sur moi. Mais si je meurs, beaucoup d’humains mourront avec moi."
+t[108] = "Tes cheveux blancs sont la marque des élus. La légende étant oubliée depuis bien des générations, tout le monde croit que ce n’est qu’une simple spécificité physique, mais ils se trompent."
+t[109] = "Tu veux dire que j’ai des sortes de pouvoirs ?"
+t[110] = "Oui, tu as le pouvoir de comprendre les souffrances des êtres qui t’entourent. Dès qu’elle domine un endroit, ton espèce le détruit, puis elle abandonne l’endroit pour en détruire un autre. Seulement, nous sommes nous aussi des êtres vivants."
+t[111] = "C’est pour cela que ton empathie pour nous te semble être un pouvoir surnaturel. Aide-moi, tu peux montrer à tout le monde que cette immonde usine m’empoisonne simplement pour enrichir un homme."
+t[112] = "Je ne suis qu’un enfant. Comment puis-je m’opposer seul à l’homme le plus puissant de la ville ? Même la police évite de se mêler de ses affaires."
+t[113] = "Tu n’es pas seul..."
+t[114] = ""
+t[115] = "Cette fois-ci, plus de doutes possibles ! Jaya’nah me parle ! Je n’ai pas le choix, je dois l’aider. Mais comment faire pour renverser Poskinov ? Il est trop influent pour qu’un simple enfant comme moi puisse mettre son entreprise à mal."
+t[116] = "À moins que je ne prouve aux yeux de tous qu’il joue avec la vie des habitants de la ville avec ses petites magouilles..."
+t[117] = "Vous décidez de retourner chez Gareth, lorsque vous sortez, une bonne partie de la journée s’est déjà écoulée"
+t[118] = "Gareth ! Tu es là ? Je dois te parler de quelque chose de très important."
+t[119] = "Ah tu es là, petit ? Ne reste pas là, entre."
+t[120] = "Jaya’nah se plaint tous les jours, je l’ai entendue dans un sanctuaire perdu dans la forêt."
+t[121] = "...Petit, tu es sûr que les produits toxiques ne t’ont pas laissé de séquelles ?"
+t[122] = "Je te le promets Gareth ! Tu l’as dit toi-même la dernière fois, nous sommes encore entrain de tuer l’endroit qui nous accueille !"
+t[123] = "Évidemment, de toute façon, que pouvons-nous y faire ?"
+t[124] = "Nous devons mettre la lumière sur ce qu’il se passe dans l’usine."
+t[125] = "Poskinov est trop influent !"
+t[126] = "Contrairement à toi, il n’a pas la confiance des ouvriers..."
+t[127] = "Je suis pas sûr de te suivre, William. Tu veux que je m’oppose à lui ?"
+t[128] = "Oui, organise une grève, si la production est bloquée, tous les journaux de la ville iront directement à l’usine pour couvrir l’évènement. Si je parviens à libérer les malades, nous prouveront déjà que Poskinov séquestre des enfants pour cacher les effets nocifs qu’ont ses produits sur eux"
+t[129] = "Et ma fille ? Je suis vraiment désolé, mais je ne risquerai pas sa mort. Sous aucun prétexte. Comment fera-t-on si Poskinov étouffe l’affaire ? N’oublie pas qu’il est un ami personnel du maire de la ville, il est intouchable."
+t[130] = "Mais elle mourra si Jaya’nah meurt ! Je vais poster des lettres anonymes pour prévenir les journaux qu’une grève générale se prépare aux usines Poskinov. Il faut au moins essayer de sauver Jaya’nah. Il doit bien y avoir des remèdes quelque part dans l’usine."
+t[131] = "Je suppose que je n’ai pas le choix… Mais comment comptes-tu les faire sortir de l’usine devant tout le monde ? Tu vas te faire attraper par les fidèles du patron qui gardent l’entrepôt."
+t[132] = "Je profiterai de la cohue générée par la grève, si tu peux te procurer les clés, je me charge d’aller leur ouvrir discrètement."
+t[133] = "Bien, je m’occuperai de cette partie du plan. Laisse moi une journée pour en parler à ceux en qui j’ai confiance, et nous bloquerons la production après-demain."
+//puzzle
+t[134] = "Les gars, nous devons bloquer la production ! Le patron nous ment depuis longtemps !"
+t[135] = "Tu es contremaître, toi ! Nous, on peut pas s’permettre d’arrêter le boulot. Sans paye, on mange pas !"
+t[136] = ""
+t[137] = "Eh bien… Si on fait rien, on va tous mourir, c’est ce que tu es en train de nous dire ?"
+t[138] = "Oui, vous, moi, nous tous sauf le patron. En plus de ça..."
+t[139] = "Excusez-moi, messieurs, j’interromps quelque chose ? Gareth, suivez-moi. J’ai un problème dont j’aimerais vous faire part."
+t[140] = "Bien, monsieur..."
+t[141] = "Le patron est venu le chercher en personne ! Et vu les deux gorilles qui l’accompagnent, il n’a pas l’air de plaisanter. Peut-être que ce bon vieux Gareth nous dit la vérité, après tout."
+t[142] = "Je suis désolé, petit…"
+t[143] = "Tu es désolé ? Mais pourquoi ?"
+t[144] = "Tiens, bonjour jeune homme. C’est justement vous que je cherchais ! Vous me mettez des bâtons dans les roues, chose que je ne saurai tolérer. Je me vois dans l’obligation de faire en sorte que cela cesse."
+t[145] = "Gareth, vous avez dévoilé des informations confidentielles à cet irresponsable enfant, je me vois donc dans l’obligation de vous sanctionner."
+t[146] = "À moins d’une action qui vous placerait de nouveau en odeur de sainteté à mes yeux, j’ai l’immense regret de vous annoncer que l’entreprise n’est plus en mesure de fournir à votre fille son traitement."
+t[147] = "Je ne vois que deux façons de sortir de cette fâcheuse situation. La première, et celle que je trouve personnellement la plus probable, est que vous restiez bêtement accroché à vos principes d’enfant de dix ans. Auquel cas je prendrai des mesures qui vous déplairont très certainement."
+t[148] = "La seconde est que vous vous décidez enfin à être raisonnable, et vous arrêtez de vous mêler de ce qui ne vous regarde pas. Dans ce cas je vous offrirai généreusement, ainsi qu’à votre famille une place dans un dirigeable si notre bienaimée Jaya’nah venait à nous quitter. La proposition vaut aussi pour vous, Gareth."
+t[149] = "Alors tu disais vrai, petit. Poskinov se fiche vraiment du sort de la ville et de ses habitants."
+t[150] = "Silence, Gareth. Choisissez tous les deux vos prochains mots avec attention. ma patience a atteint ses limites."
+t[151] = "Bien.. Je pense que nous n’avons pas vraiment le choix...."
+t[152] = "Quelle sage décision ! Bien, je ne puis m’entretenir avec vous plus longtemps, les affaires m’appellent. Puisque toute confusion est dissipée, plus rien ne me retient dans votre miteuse bâtisse. En vous souhaitant une agréable journée."
+t[153] = "Cet homme est vraiment méprisable..."
+t[154] = "Ne t’inquiète pas Gareth, je ne compte pas le laisser s’en tirer à si bon compte."
+t[155] = "Que veux-tu dire, mon garçon ?"
+t[156] = "Tu croyais vraiment que j’allais accepter sa proposition comme si j’étais à sa solde ? Je ne vais pas me laisser faire aussi facilement. Il doit sûrement penser que cette histoire est réglée, que nous nous sommes docilement rangés de son côté par peur."
+t[157] = "Alors, on poursuit le plan ?"
+t[158] = "Bien sûr."
+t[159] = "Gareth et vous maintenez votre décision d'exécuter votre plan initial. Vous vous rendez à l’usine ensemble."
+t[160] = "Tu sais qui est responsable des clés de la quarantaine aujourd’hui ?"
+t[161] = "Si je ne me trompe pas, c’est Chuck."
+t[162] = "Il ne nous laissera jamais les prendre !"
+t[163] = "Ne t’inquiète pas, je me charge de lui."
+t[164] = ""
+t[165] = "Qu’est-ce-qu’il se passe les gars ? Vous n’êtes pas censés travailler ?"
+t[166] = "Gareth ! Tu es vivant ! On a eu peur que le patron t’ait fait la peau ! On est désolés de ne pas avoir cru directement à l’histoire que tu nous avais raconté..."
+t[167] = "Ne vous en faites pas pour moi. Je suis plus résistant que j’en ai l’air, alors vous nous soutenez ? Vous bloquez la production ?"
+t[168] = "Bien sûr qu’on te soutient !"
+t[169] = "Bien, pour prouver à tout le monde que le patron est une ordure, il faut aller chercher les clés du vieil entrepôt. C’est Chuck qui en est responsable aujourd’hui, est-ce que quelqu’un sait où il est ?"
+t[170] = "Oui, suis-nous."
+t[171] = "Je vous revaudrais ça les gars !"
+t[172] = ""
+t[173] = "Salut Chuck, donne nous la clé de l’entrepôt s’il te plaît."
+t[174] = "Ne fait pas l’innocent avec moi, je ne suis pas stupide, je sais ce que vous avez prévu de faire et je ne me joindrai pas à votre stupide plan. Maintenant remettez-vous au travail avant que le patron ne se fâche."
+t[175] = "Je me doutais que ça se passerait comme ça. J’ai essayé de faire ça en douceur, mais j’ai pas l’temps de discuter. Allez les gars, on va la récupérer de force."
+t[176] = "Si tu veux cette clé, viens la chercher !"
+t[177] = "Chuck est facilement maîtrisé par les ouvriers et vous prenez la clé."
+t[178] = ""
+t[179] = ""
+t[180] = ""
+t[181] = ""
+t[182] = ""
+t[183] = ""
+t[184] = ""
+t[185] = ""
+t[186] = ""
+t[187] = ""
+t[188] = ""
+t[189] = ""
+t[190] = ""
+t[191] = ""
+t[192] = ""
+t[193] = ""
+t[194] = ""
+t[195] = ""
+t[196] = ""
+t[197] = ""
+t[198] = ""
+t[199] = ""
+t[200] = ""
+t[201] = ""
+t[202] = ""
+t[203] = ""
+t[204] = ""
+t[205] = ""
+t[206] = ""
+t[207] = ""
+t[208] = ""
+t[209] = ""
+t[210] = ""
+t[211] = ""
+t[212] = ""
+t[213] = ""
+t[214] = ""
+t[215] = ""
+t[216] = ""
+t[217] = ""
+t[218] = ""
+t[219] = ""
+
 //------------------------Fin texte------------------------
 
 //------------------------Avancer dans le dialgue------------------------
 $('#bulle').on('click',function() {
     if (iTexte==13){iFond.attr('src','assets/usine.png');}
-    if (iTexte!=6 && iTexte!=10 && iTexte!=15 && iTexte != 18) {
+    if (iTexte!=6 && iTexte!=10 && iTexte!=15 && iTexte != 18 && iTexte!=32 && iTexte!=40 && iTexte!=150) {
         iTexte ++;
         document.getElementById("texte").innerHTML = t[iTexte];
     }
@@ -68,7 +255,6 @@ $('#bulle').on('click',function() {
         document.getElementById("dchoix1").style.visibility = "visible";
         document.getElementById("dchoix2").style.visibility = "visible";
         iFond.attr('src','assets/zzz.png');
-    }
     }
     if (iTexte==9){iTexte=14;iFond.attr('src','assets/usine.png');}
     if (iTexte==12){iTexte=14;iFond.attr('src','assets/usine.png');}
@@ -88,8 +274,34 @@ $('#bulle').on('click',function() {
         document.getElementById("tchoix2").style.visibility = "visible";
         document.getElementById("tchoix3").style.visibility = "visible";
     }
+    if (iTexte==32) {
+        document.getElementById("deuxChoixB").style.visibility = "visible";
+        document.getElementById("1").innerHTML = "Y aller discrètement"
+        document.getElementById("2").innerHTML = "Y aller en courant pour lui porter assistance"
+        document.getElementById("dchoix1").style.visibility = "visible";
+        document.getElementById("dchoix2").style.visibility = "visible";
+    }
+    if (iTexte==40) {    
+        document.getElementById("troisChoixB").style.visibility = "visible";
+        document.getElementById("3").innerHTML = "Se montrer et protester"
+        document.getElementById("4").innerHTML = "Se cacher et écouter"
+        document.getElementById("5").innerHTML = "Aller voir Gareth, le seul contremaître en qui vous avez confiance"
+        document.getElementById("tchoix1").style.visibility = "visible";
+        document.getElementById("tchoix2").style.visibility = "visible";
+        document.getElementById("tchoix3").style.visibility = "visible";
+    }
+    if (iTexte==66){iTexte=73;}
+    if (iTexte==150) {    
+        document.getElementById("troisChoixB").style.visibility = "visible";
+        document.getElementById("3").innerHTML = "Refuser catégoriquement"
+        document.getElementById("4").innerHTML = "Faire semblant d'accepter"
+        document.getElementById("5").innerHTML = "Accepter sa proposition"
+        document.getElementById("tchoix1").style.visibility = "visible";
+        document.getElementById("tchoix2").style.visibility = "visible";
+        document.getElementById("tchoix3").style.visibility = "visible";
+    }
     //Italic
-    if (iTexte==21 || iTexte==22) {document.getElementById("texte").style.fontStyle = "italic";}else{document.getElementById("texte").style.fontStyle = "normal";}
+    if (iTexte==21 || iTexte==22 || iTexte==31 || iTexte==32 || iTexte==38 || iTexte==62 || iTexte==117 || iTexte==159 || iTexte==177) {document.getElementById("texte").style.fontStyle = "italic";}else{document.getElementById("texte").style.fontStyle = "normal";}
     //Fin italic
 })
 //------------------------Fin avancer dialogue------------------------
@@ -191,3 +403,90 @@ tchoix3.on('click',function() {
     }
 })
 //Fin choix It 3------------------------3
+//Choix It 4------------------------2
+dchoix1.on('click',function() {
+    if (iTexte==32) {
+        iTexte+=2
+        document.getElementById("texte").style.fontStyle = "normal";
+        document.getElementById("texte").innerHTML = t[iTexte];
+        document.getElementById("deuxChoixB").style.visibility = "hidden";
+        document.getElementById("dchoix1").style.visibility = "hidden";
+        document.getElementById("dchoix2").style.visibility = "hidden";
+    }
+})
+dchoix2.on('click',function() {
+    if (iTexte==32) {
+        iTexte++;
+        document.getElementById("texte").style.fontStyle = "normal";
+        document.getElementById("texte").innerHTML = t[iTexte];
+        document.getElementById("deuxChoixB").style.visibility = "hidden";
+        document.getElementById("dchoix1").style.visibility = "hidden";
+        document.getElementById("dchoix2").style.visibility = "hidden";
+    }
+})
+//Fin choix It 4------------------------2
+//Choix It 5------------------------3
+tchoix1.on('click',function() {
+    if (iTexte==40) {
+        iTexte++;
+        document.getElementById("texte").innerHTML = t[iTexte];
+        document.getElementById("troisChoixB").style.visibility = "hidden";
+        document.getElementById("tchoix1").style.visibility = "hidden";
+        document.getElementById("tchoix2").style.visibility = "hidden";
+        document.getElementById("tchoix3").style.visibility = "hidden";
+    }
+})
+tchoix2.on('click',function() {
+    if (iTexte==40) {
+        iTexte+=27;
+        document.getElementById("texte").innerHTML = t[iTexte];
+        document.getElementById("troisChoixB").style.visibility = "hidden";
+        document.getElementById("tchoix1").style.visibility = "hidden";
+        document.getElementById("tchoix2").style.visibility = "hidden";
+        document.getElementById("tchoix3").style.visibility = "hidden";
+    }
+})
+tchoix3.on('click',function() {
+    if (iTexte==40) {
+        iTexte+=31;
+        document.getElementById("texte").innerHTML = t[iTexte];
+        document.getElementById("troisChoixB").style.visibility = "hidden";
+        document.getElementById("tchoix1").style.visibility = "hidden";
+        document.getElementById("tchoix2").style.visibility = "hidden";
+        document.getElementById("tchoix3").style.visibility = "hidden";
+    }
+})
+//Fin choix It 5------------------------3
+//Choix It 5------------------------3
+tchoix1.on('click',function() {
+    if (iTexte==150) {
+        iTexte+=;
+        document.getElementById("texte").innerHTML = t[iTexte];
+        document.getElementById("troisChoixB").style.visibility = "hidden";
+        document.getElementById("tchoix1").style.visibility = "hidden";
+        document.getElementById("tchoix2").style.visibility = "hidden";
+        document.getElementById("tchoix3").style.visibility = "hidden";
+    }
+})
+tchoix2.on('click',function() {
+    if (iTexte==150) {
+        iTexte++;
+        document.getElementById("texte").innerHTML = t[iTexte];
+        document.getElementById("troisChoixB").style.visibility = "hidden";
+        document.getElementById("tchoix1").style.visibility = "hidden";
+        document.getElementById("tchoix2").style.visibility = "hidden";
+        document.getElementById("tchoix3").style.visibility = "hidden";
+        iTexte++;
+    }
+})
+tchoix3.on('click',function() {
+    if (iTexte==150) {
+        iTexte+=3;
+        document.getElementById("texte").innerHTML = t[iTexte];
+        document.getElementById("troisChoixB").style.visibility = "hidden";
+        document.getElementById("tchoix1").style.visibility = "hidden";
+        document.getElementById("tchoix2").style.visibility = "hidden";
+        document.getElementById("tchoix3").style.visibility = "hidden";
+    }
+})
+//Fin choix It 5------------------------3
