@@ -365,7 +365,9 @@ dchoix2.on('click',function() {
         document.getElementById("dchoix2").style.visibility = "hidden";
         document.getElementById("bulle").style.visibility = "hidden";
         iFond.attr('src','assets/reveil.png');
+        iPerso.attr('src','assets/garcon.png');
     }
+
 })
 //Fin choix It 1------------------------2
 //------------------------Point and click 1------------------------
