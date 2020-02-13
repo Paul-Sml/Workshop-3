@@ -1,6 +1,6 @@
 //------------------------Initialisation------------------------
 let bulle = $('#bulle');
-let iTexte = 17;
+let iTexte = 140;
 let tchoix1 = $('#tchoix1');
 let tchoix2 = $('#tchoix2');
 let tchoix3 = $('#tchoix3');
@@ -10,6 +10,8 @@ let pac1i = 0;
 let iFond = $('#imageFond');
 let iPerso =$('#perso');
 let iPerso2 =$('#perso2');
+let iPerso3 =$('#perso3');
+let iPerso4 =$('#perso4');
 
 //-------------------------Texte------------------------
 let t = [290];
@@ -360,13 +362,18 @@ $('#bulle').on('click',function() {
     }
     if (iTexte==41){iPerso2.attr('src','assets/fille.png');}
     if (iTexte==62){iFond.attr('src','assets/cellule.png');}
-    if (iTexte==71){iFond.attr('src','assets/maisonGareth.png');}
     if (iTexte==66){iTexte=73;}
-    if (iTexte==85){iFond.attr('src','assets/coucherG.png');}
+    if (iTexte==71){iFond.attr('src','assets/maisonGareth.png');}
+    if (iTexte==72){iPerso2.attr('src','assets/fille.png');}
+    if (iTexte==85){iFond.attr('src','assets/coucherG.png');iPerso2.attr('src','assets/vide.png');iPerso.attr('src','assets/vide.png');}
     if (iTexte==86){iFond.attr('src','assets/dodoG.png');}
     if (iTexte==89){iFond.attr('src','assets/coucherG.png');}
-    if (iTexte==100){iFond.attr('src','assets/temple.png');}
-    if (iTexte==118){iFond.attr('src','assets/maisonGareth.png');}
+    if (iTexte==100){iFond.attr('src','assets/temple.png');iPerso.attr('src','assets/garcon.png');}
+    if (iTexte==118){iFond.attr('src','assets/maisonGareth.png');iPerso.attr('src','assets/garcon.png');}
+    if (iTexte==119){iPerso.attr('src','assets/garcon.png');iPerso2.attr('src','assets/fille.png');}
+    if (iTexte==134){iFond.attr('src','assets/usine.png');iPerso2.attr('src','assets/fille.png');iPerso3.attr('src','assets/fille.png');}
+    if (iTexte==142){iFond.attr('src','assets/maisonGareth.png');iPerso.attr('src','assets/garcon.png');iPerso2.attr('src','assets/fille.png');iPerso3.attr('src','assets/vide.png');}
+    if (iTexte==144){iPerso3.attr('src','assets/fille.png');}
     if (iTexte==150) {    
         document.getElementById("troisChoixB").style.visibility = "visible";
         document.getElementById("3").innerHTML = "Refuser catégoriquement";
@@ -376,32 +383,17 @@ $('#bulle').on('click',function() {
         document.getElementById("tchoix2").style.visibility = "visible";
         document.getElementById("tchoix3").style.visibility = "visible";
     }
-     if (iTexte==32) {
-        document.getElementById("deuxChoixB").style.visibility = "visible";
-        document.getElementById("1").innerHTML = "Y aller discrètement"
-        document.getElementById("2").innerHTML = "Y aller en courant pour lui porter assistance"
-        document.getElementById("dchoix1").style.visibility = "visible";
-        document.getElementById("dchoix2").style.visibility = "visible";
-    }
-    if (iTexte==40) {    
-        document.getElementById("troisChoixB").style.visibility = "visible";
-        document.getElementById("3").innerHTML = "Se montrer et protester"
-        document.getElementById("4").innerHTML = "Se cacher et écouter"
-        document.getElementById("5").innerHTML = "Aller voir Gareth, le seul contremaître en qui vous avez confiance"
-        document.getElementById("tchoix1").style.visibility = "visible";
-        document.getElementById("tchoix2").style.visibility = "visible";
-        document.getElementById("tchoix3").style.visibility = "visible";
-    }
-    if (iTexte==66){iTexte=73;}
-    if (iTexte==150) {    
-        document.getElementById("troisChoixB").style.visibility = "visible";
-        document.getElementById("3").innerHTML = "Refuser catégoriquement"
-        document.getElementById("4").innerHTML = "Faire semblant d'accepter"
-        document.getElementById("5").innerHTML = "Accepter sa proposition"
-        document.getElementById("tchoix1").style.visibility = "visible";
-        document.getElementById("tchoix2").style.visibility = "visible";
-        document.getElementById("tchoix3").style.visibility = "visible";
-    }
+    if (iTexte==153){iPerso3.attr('src','assets/vide.png');}
+    if (iTexte==160){iFond.attr('src','assets/usine.png');}
+    if (iTexte==165){iPerso3.attr('src','assets/fille.png');}
+    if (iTexte==173){iPerso4.attr('src','assets/fille.png');}
+    if (iTexte==180){iPerso2.attr('src','assets/vide.png');iPerso3.attr('src','assets/vide.png');iPerso4.attr('src','assets/vide.png');iFond.attr('src','assets/ventre.png');}
+    if (iTexte==181){iPerso2.attr('src','assets/fille.png');iPerso3.attr('src','assets/vide.png');iPerso4.attr('src','assets/vide.png');iFond.attr('src','assets/ventre.png');}
+    if (iTexte==191){iFond.attr('src','assets/villeRiche.png');}
+    if (iTexte==267){iFond.attr('src','assets/basQuartier.png');iPerso3.attr('src','assets/vide.png');}
+    if (iTexte==273){iFond.attr('src','assets/villeRiche.png');iPerso3.attr('src','assets/fille.png');iPerso2.attr('src','assets/vide.png')}
+
+    
     if (iTexte==200 || iTexte==259 || iTexte==283) {
         document.getElementById("texte").innerHTML = "FIN";
     }
@@ -543,6 +535,7 @@ tchoix1.on('click',function() {
         document.getElementById("tchoix2").style.visibility = "hidden";
         document.getElementById("tchoix3").style.visibility = "hidden";
         iPerso2.attr('src','assets/fille.png');
+        iPerso.attr('src','assets/garcon.png');
     }
 })
 tchoix2.on('click',function() {
@@ -554,6 +547,7 @@ tchoix2.on('click',function() {
         document.getElementById("tchoix2").style.visibility = "hidden";
         document.getElementById("tchoix3").style.visibility = "hidden";
         iPerso2.attr('src','assets/fille.png');
+        iPerso.attr('src','assets/vide.png');
             }
 })
 tchoix3.on('click',function() {
@@ -564,7 +558,8 @@ tchoix3.on('click',function() {
         document.getElementById("tchoix1").style.visibility = "hidden";
         document.getElementById("tchoix2").style.visibility = "hidden";
         document.getElementById("tchoix3").style.visibility = "hidden";
-        iPerso2.attr('src','assets/fille.png');
+        
+        iFond.attr('src','assets/maisonGareth.png');
     }
 })
 //Fin choix It 5------------------------3
@@ -577,6 +572,7 @@ tchoix1.on('click',function() {
         document.getElementById("tchoix1").style.visibility = "hidden";
         document.getElementById("tchoix2").style.visibility = "hidden";
         document.getElementById("tchoix3").style.visibility = "hidden";
+
     }
 })
 tchoix2.on('click',function() {
@@ -587,6 +583,7 @@ tchoix2.on('click',function() {
         document.getElementById("tchoix1").style.visibility = "hidden";
         document.getElementById("tchoix2").style.visibility = "hidden";
         document.getElementById("tchoix3").style.visibility = "hidden";
+
     }
 })
 tchoix3.on('click',function() {
@@ -599,4 +596,5 @@ tchoix3.on('click',function() {
         document.getElementById("tchoix3").style.visibility = "hidden";
     }
 })
+
 //Fin choix It 5------------------------3
