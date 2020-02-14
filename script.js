@@ -43,7 +43,7 @@ t[25] = "......s’il......te..p..plait..";
 t[26] = "Quoi ? Qui est là ? Gareth, c’est vous ?";
 t[27] = "....";
 t[28] = "Mon dieu, j’ai l’impression que les produits toxiques dans lesquels je me suis évanoui me rendent fou. Je dois vite vite sortir d’ici.";
-t[29] = "";
+t[29] = "Vous partez à la recherche d'une sortie.";
 t[30] = "C’est vraiment grand ici ! Je suis incapable de me repérer.";
 t[31] = "Vous apercevez une lueur de lumière au fond du couloir que vous parcourez depuis quelques minutes. En vous approchant, vous distinguez quelques quintes de toux provenant du même endroit que la lumière. Mais cette toux n’est pas celle d’un vigile de nuit, c’est celle d’un enfant !";
 t[32] = "Vous vous précipitez et vous passez la tête par l’ouverture afin d’observer l’intérieur de la pièce.<br>C’est une sorte d’hôpital de fortune, sur des matelas posés à même le sol, des dizaines d’enfants gisent, plaintifs.<br>Vous reconnaissez Lucy, votre meilleure amie, alitée et au bord de l’inconscience.";
@@ -53,7 +53,7 @@ t[35] = "J'entend du bruit, je vais me faufiler dans cette porte.";
 t[36] = "Une pièce de maintenance ? Il y a un plan de secours, mais j’ai du mal à le comprendre. Je crois que ces produits toxiques m’ont vraiment embrouillé l’esprit. Ou peut-être que c’est ma chute...";
 //puzzle
 t[37] = "Ah voilà ! Je peux enfin m’en aller d’ici !";
-t[38] = "Suite à ce périple vous rentrez chez vous, vous y apercevez Chuck et un autre contremaître que vous ne connaissez pas qui discutent avec vos parents.";
+t[38] = "Arrivé devant votre maison, vous apercevez Chuck et un autre contremaître qui discutent avec vos parents.";
 t[39] = "...nous sommes désolés…";
 t[40] = "...on a tout fait pour le sauver, mais il est mort...";
 t[41] = "Eh vous ! Qu’est-ce que vous racontez à mes parents ?!";
@@ -68,7 +68,7 @@ t[49] = "Bon ça suffit ! On n’est jamais trop prudent. Viens, sinon l’entre
 t[50] = "Mais...";
 t[51] = "Ce sera rapide, arrête de te faire prier petit !";
 t[52] = "Ne discute pas. Je ne veux pas que tu tombes malade, vas-y !";
-t[53] = "";
+t[53] = "...";
 t[54] = "Qu’est ce qu’ils vont me faire ? C’est vraiment étrange, Chuck n’a jamais été bienveillant envers qui que ce soit";
 t[55] = "Tu as bien failli trop en dire, gamin. J’ai toujours su que tu nous mettrais dans le pétrin à force de te mêler de ce qui ne te regarde pas.";
 t[56] = "Pourquoi des enfants sont retenus dans l’entrepôt ? Qu’est-ce que vous manigancez ? Je n’ai rien à vous dire !";
@@ -181,7 +181,7 @@ t[157] = "Alors, on poursuit le plan ?";
 t[158] = "Bien sûr."
 t[159] = "Gareth et vous maintenez votre décision d'exécuter votre plan initial. Vous vous rendez à l’usine ensemble.";
 t[160] = "Tu sais qui est responsable des clés de la quarantaine aujourd’hui ?";
-t[161] = "Si je ne me trompe pas, c’est Chuck.";
+t[161] = "Si je ne me trompe pas, c’est Chuck.";/**/
 t[162] = "Il ne nous laissera jamais les prendre !";
 t[163] = "Ne t’inquiète pas, je me charge de lui.";
 t[164] = ""
@@ -231,7 +231,7 @@ t[207] = "Messieurs, vous regretterez votre décision. Cependant, j’ai des aff
 t[208] = "Petit, allons sortir les malades de leur prison.";
 t[209] = "Vous vous dirigez vers l’usine avec Gareth";
 t[210] = "Tu sais qui est responsable des clés de la quarantaine aujourd’hui ?";
-t[211] = "Si je m’trompe pas, c’est Chuck.";
+t[211] = "Si je m’trompe pas, c’est Chuck.";/**/
 t[212] = "Il ne nous laissera jamais les prendre !";
 t[213] = "Ne t’inquiète pas, je me charge de lui.";
 t[214] = "En arrivant à l’usine, vous apercevez un attroupement à l’entrée, vous vous approchez pour voir de quoi il s’agit.";
@@ -318,13 +318,22 @@ $('#bulle').on('click',function() {
     if (iTexte==9){iTexte=14;iFond.attr('src','assets/usine.png');}
     if (iTexte==12){iTexte=14;iFond.attr('src','assets/usine.png');}
     if (iTexte==13){iFond.attr('src','assets/usine.png');}
+        iPerso.attr('src','assets/william.png');
+    }
+    if (iTexte==8){iPerso.attr('src','assets/william.png');}
+    if (iTexte==9){iTexte=14;iFond.attr('src','assets/usine.png'); iPerso2.attr('src','assets/chuck.png');}
+    if (iTexte==12){iTexte=14;iFond.attr('src','assets/usine.png');iPerso2.attr('src','assets/chuck.png');}
+    if (iTexte==13){iFond.attr('src','assets/usine.png');}
+    if (iTexte==14){iPerso.attr('src','assets/william.png');iPerso2.attr('src','assets/chuck.png');}
     if (iTexte==15){
         document.getElementById("deuxChoixB").style.visibility = "visible";
         document.getElementById("1").innerHTML = "Demander au contremaître Gareth s'il sait ou est Lucy";
         document.getElementById("2").innerHTML = "Ne pas perdre de temps et aller travailler";
         document.getElementById("dchoix1").style.visibility = "visible";
         document.getElementById("dchoix2").style.visibility = "visible";
+        iPerso2.attr('src','assets/vide.png');
     }
+
     if (iTexte==18) {    
         document.getElementById("troisChoixB").style.visibility = "visible";
         document.getElementById("3").innerHTML = "Que se passe t-il avec le personnel ?";
@@ -334,19 +343,28 @@ $('#bulle').on('click',function() {
         document.getElementById("tchoix2").style.visibility = "visible";
         document.getElementById("tchoix3").style.visibility = "visible";
     }
-    if (iTexte==22){iFond.attr('src','assets/interieur_Raie.png');}
+    if (iTexte==22){iFond.attr('src','assets/interieur_Raie.png');
+        iPerso.attr('src','assets/william.png');
+        iPerso2.attr('src','assets/chuck.png');
+    }
+    
+    if (iTexte==22){iFond.attr('src','assets/ventre.png');iPerso2.attr('src','assets/vide.png');iPerso.attr('src','assets/william.png')}
     if (iTexte==32) {
         document.getElementById("deuxChoixB").style.visibility = "visible";
         document.getElementById("1").innerHTML = "Y aller discrètement";
         document.getElementById("2").innerHTML = "Y aller en courant pour lui porter assistance";
         document.getElementById("dchoix1").style.visibility = "visible";
         document.getElementById("dchoix2").style.visibility = "visible";
+        iFond.attr('src','assets/ventreS.png');
     }
+    if (iTexte==38){iFond.attr('src','assets/basQuartier.png');iPerso2.attr('src','assets/chuck.png');iPerso.attr('src','assets/vide.png')}
+  	if (iTexte==39){iFond.attr('src','assets/basQuartier.png');iPerso2.attr('src','assets/chuck.png');iPerso.attr('src','assets/vide.png')}
+
     if (iTexte==40) {    
         document.getElementById("troisChoixB").style.visibility = "visible";
         document.getElementById("3").innerHTML = "Se montrer et protester";
         document.getElementById("4").innerHTML = "Se cacher et écouter";
-        document.getElementById("5").innerHTML = "Aller voir Gareth, le seul contremaître en qui vous avez confiance";
+        document.getElementById("5").innerHTML = "Aller voir Gareth, le seul contremaître en qui vous ayez confiance";
         document.getElementById("tchoix1").style.visibility = "visible";
         document.getElementById("tchoix2").style.visibility = "visible";
         document.getElementById("tchoix3").style.visibility = "visible";
@@ -385,6 +403,19 @@ $('#bulle').on('click',function() {
         document.getElementById("tchoix3").style.visibility = "visible";
     }
     if (iTexte==66){iTexte=73;}
+    if (iTexte==63){iFond.attr('src','assets/basQuartier.png');}
+    if (iTexte==66){iTexte=73;}
+    if (iTexte==71){iFond.attr('src','assets/maisonGareth.png');}
+    if (iTexte==72){iPerso2.attr('src','assets/gareth.png');}
+    if (iTexte==85){iFond.attr('src','assets/coucherG.png');iPerso2.attr('src','assets/vide.png');iPerso.attr('src','assets/vide.png');}
+    if (iTexte==86){iFond.attr('src','assets/dodoG.png');}
+    if (iTexte==89){iFond.attr('src','assets/coucherG.png');}
+    if (iTexte==100){iFond.attr('src','assets/temple.png');iPerso.attr('src','assets/william.png');}
+    if (iTexte==118){iFond.attr('src','assets/maisonGareth.png');iPerso.attr('src','assets/william.png');}
+    if (iTexte==119){iPerso.attr('src','assets/william.png');iPerso2.attr('src','assets/gareth.png');}
+    if (iTexte==134){iFond.attr('src','assets/usine.png');iPerso2.attr('src','assets/gareth.png')}
+    if (iTexte==142){iFond.attr('src','assets/maisonGareth.png');iPerso.attr('src','assets/william.png');iPerso2.attr('src','assets/gareth.png');iPerso3.attr('src','assets/vide.png');}
+    if (iTexte==144){iPerso3.attr('src','assets/boss.png');}
     if (iTexte==150) {    
         document.getElementById("troisChoixB").style.visibility = "visible";
         document.getElementById("3").innerHTML = "Refuser catégoriquement";
@@ -394,13 +425,35 @@ $('#bulle').on('click',function() {
         document.getElementById("tchoix2").style.visibility = "visible";
         document.getElementById("tchoix3").style.visibility = "visible";
     }
+    if (iTexte==153){iPerso3.attr('src','assets/vide.png');}
+    if (iTexte==160){iFond.attr('src','assets/usine.png');}
+    if (iTexte==173){iPerso4.attr('src','assets/chuck.png');}
+    if (iTexte==180){iPerso2.attr('src','assets/vide.png');iPerso3.attr('src','assets/vide.png');iPerso4.attr('src','assets/vide.png');iFond.attr('src','assets/ventreS.png');}
+    if (iTexte==181){iPerso2.attr('src','assets/fille.png');iPerso3.attr('src','assets/vide.png');iPerso4.attr('src','assets/vide.png');iFond.attr('src','assets/ventreS.png');}
+    if (iTexte==191){iFond.attr('src','assets/villeRiche.png');}
+    if (iTexte==192){iPerso3.attr('src','assets/fille.png');}
+    if (iTexte==199){iFond.attr('src','assets/fin.png');iPerso.attr('src','assets/vide.png');iPerso2.attr('src','assets/vide.png');iPerso3.attr('src','assets/vide.png');iPerso4.attr('src','assets/vide.png');}
+    if (iTexte==208){iPerso3.attr('src','assets/vide.png');}
+    if (iTexte==210){iFond.attr('src','assets/basQuartier.png');iPerso3.attr('src','assets/vide.png');}
+    if (iTexte==214){iFond.attr('src','assets/usine.png');iPerso3.attr('src','assets/vide.png');}
+    if (iTexte==233){iPerso4.attr('src','assets/chuck.png');}
+    if (iTexte==240){iPerso2.attr('src','assets/vide.png');iPerso3.attr('src','assets/vide.png');iPerso4.attr('src','assets/vide.png');iFond.attr('src','assets/ventreS.png');}
+    if (iTexte==241){iPerso2.attr('src','assets/fille.png');iPerso3.attr('src','assets/vide.png');iPerso4.attr('src','assets/vide.png');iFond.attr('src','assets/ventreS.png');}
+    if (iTexte==250){iFond.attr('src','assets/villeRiche.png');}
+    if (iTexte==251){iPerso3.attr('src','assets/fille.png');}
+    if (iTexte==257){iFond.attr('src','assets/fin.png');iPerso.attr('src','assets/vide.png');iPerso2.attr('src','assets/vide.png');iPerso3.attr('src','assets/vide.png');}
+	if (iTexte==267){iFond.attr('src','assets/basQuartier.png');iPerso3.attr('src','assets/vide.png');iPerso2.attr('src','assets/lucy.png');}
+	if (iTexte==273){iPerso2.attr('src','assets/vide.png');iFond.attr('src','assets/villeRiche.png');}
+    if (iTexte==274){iPerso3.attr('src','assets/vide.png');iPerso2.attr('src','assets/boss.png')}
+    if (iTexte==280){iPerso2.attr('src','assets/boss.png');iPerso3.attr('src','assets/vide.png')}
+
     if (iTexte==200 || iTexte==259 || iTexte==283) {
         document.getElementById("texte").innerHTML = "FIN";
     }
     //Italic
     if (iTexte==21 || iTexte==22 || iTexte==31 || iTexte==32 || iTexte==38 || iTexte==62 || iTexte==117 || iTexte==159 || iTexte==177 || iTexte==180 || iTexte==190 || iTexte==191 || iTexte==193 || iTexte==198 || iTexte==199 || iTexte==200 || iTexte==209 || iTexte==214 || iTexte==232 || iTexte==237 || iTexte==240 || iTexte==250 || iTexte==252 || iTexte==257 || iTexte==258 || iTexte==259 || iTexte==266 || iTexte==272 || iTexte==275 || iTexte==279 || iTexte==283) {document.getElementById("texte").style.fontStyle = "italic";}else{document.getElementById("texte").style.fontStyle = "normal";}
     //Fin italic
-})
+
 //------------------------Fin avancer dialogue------------------------
 //Choix It 1------------------------2
 dchoix1.on('click',function() {
@@ -422,6 +475,8 @@ dchoix2.on('click',function() {
         document.getElementById("bulle").style.visibility = "hidden";
         iFond.attr('src','assets/reveil.png');
         iPerso.attr('src','assets/garcon.png');
+        iPerso.attr('src','assets/william.png');
+        iPerso.attr('src','assets/vide.png');
     }
 
 })
@@ -457,6 +512,7 @@ dchoix1.on('click',function() {
         document.getElementById("dchoix1").style.visibility = "hidden";
         document.getElementById("dchoix2").style.visibility = "hidden";
         iTexte++;
+        iPerso2.attr('src','assets/chuck.png');
     }
 })
 dchoix2.on('click',function() {
@@ -466,6 +522,7 @@ dchoix2.on('click',function() {
         document.getElementById("deuxChoixB").style.visibility = "hidden";
         document.getElementById("dchoix1").style.visibility = "hidden";
         document.getElementById("dchoix2").style.visibility = "hidden";
+        iPerso2.attr('src','assets/chuck.png');
     }
 })
 //Fin choix It 2------------------------2
@@ -533,6 +590,8 @@ tchoix1.on('click',function() {
         document.getElementById("tchoix1").style.visibility = "hidden";
         document.getElementById("tchoix2").style.visibility = "hidden";
         document.getElementById("tchoix3").style.visibility = "hidden";
+        iPerso2.attr('src','assets/chuck.png');
+        iPerso.attr('src','assets/william.png');
     }
 })
 tchoix2.on('click',function() {
@@ -553,6 +612,10 @@ tchoix3.on('click',function() {
         document.getElementById("tchoix1").style.visibility = "hidden";
         document.getElementById("tchoix2").style.visibility = "hidden";
         document.getElementById("tchoix3").style.visibility = "hidden";
+
+        iPerso2.attr('src','assets/vide.png');
+        iPerso.attr('src','assets/william.png');
+        iFond.attr('src','assets/maisonGareth.png');
     }
 })
 //Fin choix It 5------------------------3

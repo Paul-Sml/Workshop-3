@@ -65,7 +65,7 @@ span {
 
 #pac1o1 {
   width: 480px; height: 240px;
-  border: 1px solid green;
+  border: 1px solid none;
   position: absolute;
   top: 775px;
   left: 530px;
@@ -73,7 +73,7 @@ span {
 
 #pac1o2 {
   width: 360px; height: 1080px;
-  border: 1px solid green;
+  border: 1px solid none;
   position: absolute;
   top: 0px;
   left: 1560px;
@@ -83,7 +83,7 @@ span {
 
 #dchoix1 {
 	width: 1880px; height: 36px;
-	border: 1px solid green;
+	border: 1px solid none;
 	z-index: 4;
 	margin-top: -50px;
 	margin-left: 10px;
@@ -92,7 +92,7 @@ span {
 
 #dchoix2 {
 	width: 1880px; height: 36px;
-	border: 1px solid green;
+	border: 1px solid none;
 	z-index: 4;
 	margin-top: -90px;
 	margin-left: 10px;
@@ -101,7 +101,7 @@ span {
 
 #tchoix1 {
 	width: 1880px; height: 36px;
-	border: 1px solid green;
+	border: 1px solid none;
 	z-index: 4;
 	margin-top: -50px;
 	margin-left: 10px;
