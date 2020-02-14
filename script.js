@@ -1,6 +1,6 @@
 //------------------------Initialisation------------------------
 let bulle = $('#bulle');
-let iTexte = 190;
+let iTexte = 134;
 let tchoix1 = $('#tchoix1');
 let tchoix2 = $('#tchoix2');
 let tchoix3 = $('#tchoix3');
@@ -382,17 +382,19 @@ $('#bulle').on('click',function() {
         document.getElementById("tchoix2").style.visibility = "visible";
         document.getElementById("tchoix3").style.visibility = "visible";
     }
-    if (iTexte==62){iFond.attr('src','assets/cellule.png');}
+    if (iTexte==54){iFond.attr('src','assets/basQuartier.png');}
+    if (iTexte==61){iPerso2.attr('src','assets/vide.png');iFond.attr('src','assets/cellule.png');}
+    if (iTexte==64){iFond.attr('src','assets/maisonGareth.png');}
+    if (iTexte==65){iPerso2.attr('src','assets/gareth.png');}
     if (iTexte==66){iTexte=73;}
     if (iTexte==71){iFond.attr('src','assets/maisonGareth.png');iPerso.attr('src','assets/william.png');}
     if (iTexte==72){iFond.attr('src','assets/garethI.png');}
-    if (iTexte==73){iFond.attr('src','assets/garethI.png');}
+    if (iTexte==73){iFond.attr('src','assets/garethI.png');iPerso2.attr('src','assets/gareth.png');}
     if (iTexte==85){iFond.attr('src','assets/coucherG.png');}
     if (iTexte==86){iFond.attr('src','assets/dodoG.png');}
     if (iTexte==89){iFond.attr('src','assets/coucherG.png');}
     if (iTexte==100){iFond.attr('src','assets/temple.png');}
     if (iTexte==101){iFond.attr('src','assets/templeI.png');}
-    if (iTexte==102){iFond.attr('src','assets/temple.png');}
     if (iTexte==118){iFond.attr('src','assets/maisonGareth.png');}
     if (iTexte==119){iFond.attr('src','assets/garethI.png');}
     if (iTexte==150) {    
@@ -423,18 +425,20 @@ $('#bulle').on('click',function() {
     if (iTexte==66){iTexte=73;}
     if (iTexte==63){iFond.attr('src','assets/basQuartier.png');}
     if (iTexte==66){iTexte=73;}
-    if (iTexte==71){iFond.attr('src','assets/maisonGareth.png');}
-    if (iTexte==72){iPerso2.attr('src','assets/gareth.png');}
+    if (iTexte==71){iFond.attr('src','assets/maisonGareth.png');iPerso2.attr('src','assets/gareth.png');}
+    if (iTexte==72){iPerso2.attr('src','assets/gareth.png');iPerso2.attr('src','assets/gareth.png');}
     if (iTexte==85){iFond.attr('src','assets/coucherG.png');iPerso2.attr('src','assets/vide.png');iPerso.attr('src','assets/vide.png');}
     if (iTexte==86){iFond.attr('src','assets/dodoG.png');}
     if (iTexte==89){iFond.attr('src','assets/coucherG.png');}
     if (iTexte==100){iFond.attr('src','assets/temple.png');iPerso.attr('src','assets/william.png');}
+    if (iTexte==115){iFond.attr('src','assets/temple.png');iPerso.attr('src','assets/william.png');}
     if (iTexte==118){iFond.attr('src','assets/maisonGareth.png');iPerso.attr('src','assets/william.png');}
     if (iTexte==119){iPerso.attr('src','assets/william.png');iPerso2.attr('src','assets/gareth.png');}
-    if (iTexte==134){iFond.attr('src','assets/usine.png');iPerso2.attr('src','assets/gareth.png');}
+    if (iTexte==134){iFond.attr('src','assets/usine.png');iPerso2.attr('src','assets/gareth.png');iPerso1.attr('src','assets/vide.png');}
     if (iTexte==139){iPerso2.attr('src','assets/gareth.png');iPerso3.attr('src','assets/boss.png');}
     if (iTexte==139){iPerso2.attr('src','assets/gareth.png');iPerso3.attr('src','assets/boss.png')}
     if (iTexte==141){iPerso.attr('src','assets/vide.png');iPerso2.attr('src','assets/vide.png');iPerso3.attr('src','assets/vide.png');}
+    if (iTexte==142){iFond.attr('src','assets/garethI.png');iPerso2.attr('src','assets/gareth.png');iPerso.attr('src','assets/william.png');}
     if (iTexte==144){iPerso3.attr('src','assets/boss.png');}
     if (iTexte==150) {    
         document.getElementById("troisChoixB").style.visibility = "visible";
@@ -463,12 +467,13 @@ $('#bulle').on('click',function() {
     if (iTexte==250){iFond.attr('src','assets/villeRiche.png');}
     if (iTexte==251){iPerso3.attr('src','assets/fille.png');}
     if (iTexte==257){iFond.attr('src','assets/fin.png');iPerso.attr('src','assets/vide.png');iPerso2.attr('src','assets/vide.png');iPerso3.attr('src','assets/vide.png');}
+    if (iTexte==263){iPerso3.attr('src','assets/vide.png');}
 	if (iTexte==267){iFond.attr('src','assets/basQuartier.png');iPerso3.attr('src','assets/vide.png');iPerso2.attr('src','assets/lucy.png');}
 	if (iTexte==273){iPerso2.attr('src','assets/vide.png');iFond.attr('src','assets/villeRiche.png');}
     if (iTexte==274){iPerso3.attr('src','assets/vide.png');iPerso2.attr('src','assets/boss.png');}
     if (iTexte==275){iFond.attr('src','assets/predeath.png');}
     if (iTexte==280){iPerso2.attr('src','assets/boss.png');iPerso3.attr('src','assets/vide.png');iFond.attr('src','assets/predeath.png');}
-    if (iTexte==282){iFond.attr('src','assets/death.png');}
+    if (iTexte==282){iFond.attr('src','assets/death.png');iPerso2.attr('src','assets/vide.png');iPerso.attr('src','assets/vide.png');}
     if (iTexte==283){iFond.attr('src','assets/fuite.png');}
     if (iTexte==285){iFond.attr('src','assets/fin.png');}
     
