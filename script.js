@@ -1,6 +1,6 @@
 //------------------------Initialisation------------------------
 let bulle = $('#bulle');
-let iTexte = 0;
+let iTexte = 119;
 let tchoix1 = $('#tchoix1');
 let tchoix2 = $('#tchoix2');
 let tchoix3 = $('#tchoix3');
@@ -384,7 +384,7 @@ $('#bulle').on('click',function() {
     if (iTexte==89){iFond.attr('src','assets/coucherG.png');}
     if (iTexte==100){iFond.attr('src','assets/temple.png');}
     if (iTexte==101){iFond.attr('src','assets/templeI.png');}
-    if (iTexte==102){iFond.attr('src','assets/templeI.png');}
+    if (iTexte==102){iFond.attr('src','assets/temple.png');}
     if (iTexte==118){iFond.attr('src','assets/maisonGareth.png');}
     if (iTexte==119){iFond.attr('src','assets/garethI.png');}
     if (iTexte==150) {    
@@ -423,9 +423,10 @@ $('#bulle').on('click',function() {
     if (iTexte==100){iFond.attr('src','assets/temple.png');iPerso.attr('src','assets/william.png');}
     if (iTexte==118){iFond.attr('src','assets/maisonGareth.png');iPerso.attr('src','assets/william.png');}
     if (iTexte==119){iPerso.attr('src','assets/william.png');iPerso2.attr('src','assets/gareth.png');}
-    if (iTexte==134){iFond.attr('src','assets/usine.png');iPerso2.attr('src','assets/gareth.png')}
+    if (iTexte==134){iFond.attr('src','assets/usine.png');iPerso2.attr('src','assets/gareth.png');}
+    if (iTexte==139){iPerso2.attr('src','assets/gareth.png');iPerso3.attr('src','assets/boss.png');}
     if (iTexte==139){iPerso2.attr('src','assets/gareth.png');iPerso3.attr('src','assets/boss.png')}
-    if (iTexte==142){iFond.attr('src','assets/garethI.png');iPerso.attr('src','assets/william.png');iPerso2.attr('src','assets/gareth.png');iPerso3.attr('src','assets/vide.png');}
+    if (iTexte==141){iPerso.attr('src','assets/vide.png');iPerso2.attr('src','assets/vide.png');iPerso3.attr('src','assets/vide.png');}
     if (iTexte==144){iPerso3.attr('src','assets/boss.png');}
     if (iTexte==150) {    
         document.getElementById("troisChoixB").style.visibility = "visible";
