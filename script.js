@@ -1,12 +1,14 @@
 //------------------------Initialisation------------------------
 let bulle = $('#bulle');
-let iTexte = 134;
+let iTexte = 60;
 let tchoix1 = $('#tchoix1');
 let tchoix2 = $('#tchoix2');
 let tchoix3 = $('#tchoix3');
 let dchoix1 = $('#dchoix1');
 let dchoix2 = $('#dchoix2');
 let pac1i = 0;
+let pac2i = 0;
+let pac2i2 = 0;
 let iFond = $('#imageFond');
 let iPerso =$('#perso');
 let iPerso2 =$('#perso2');
@@ -309,7 +311,7 @@ $('#bulle').on('click',function() {
         iTexte = 283;
     }
     if (iTexte==13){iFond.attr('src','assets/usine.png');}
-    if (iTexte!=6 && iTexte!=10 && iTexte!=15 && iTexte != 18 && iTexte!=32 && iTexte!=40 && iTexte!=150 && iTexte!=200 && iTexte!=259 && iTexte!=283) {
+    if (iTexte!=6 && iTexte!=10 && iTexte!=15 && iTexte != 18 && iTexte!=32 && iTexte!=40 && iTexte!=62 && iTexte!=150 && iTexte!=200 && iTexte!=259 && iTexte!=283) {
         iTexte ++;
         document.getElementById("texte").innerHTML = t[iTexte];
     }
@@ -383,7 +385,12 @@ $('#bulle').on('click',function() {
         document.getElementById("tchoix3").style.visibility = "visible";
     }
     if (iTexte==54){iFond.attr('src','assets/basQuartier.png');}
-    if (iTexte==61){iPerso2.attr('src','assets/vide.png');iFond.attr('src','assets/cellule.png');}
+    if (iTexte==62){iPerso2.attr('src','assets/vide.png');iFond.attr('src','assets/cellule.png');}
+    if (iTexte==62 && pac2i2!=0){ 
+    	iTexte ++;
+        document.getElementById("texte").innerHTML = t[iTexte];
+        document.getElementById("pac2o3").style.visibility = "hidden";
+    }
     if (iTexte==64){iFond.attr('src','assets/maisonGareth.png');}
     if (iTexte==65){iPerso2.attr('src','assets/gareth.png');}
     if (iTexte==66){iTexte=73;}
@@ -531,6 +538,28 @@ $('#pac1o2').on('click',function() {
     }
 })
 //------------------------Fin poc1------------------------
+//------------------------Point and click 2------------------------
+$('#pac2o2').on('click',function() {
+    if (iTexte==62) {
+        document.getElementById("bulle").style.visibility = "visible";
+        document.getElementById("texte").innerHTML = "Je ne devrait pas me reposer maintenant, je dois trouver un moyen de sortir d'ici";
+    }
+})
+$('#pac2o1').on('click',function() {
+    if (iTexte==62) {
+        document.getElementById("pac2o3").style.visibility = "visible";
+        document.getElementById("pac2o4").style.visibility = "visible";
+        pac2i++;
+
+    }
+})
+$('#pac2o4').on('click',function() {
+    if (iTexte==62 && pac2i!=0) {
+        document.getElementById("texte").innerHTML = "Ce truc devrait suffir pour sortir d'ici";
+        pac2i2 ++;
+    }
+})
+//------------------------Fin poc2------------------------
 //Choix It 2------------------------2
 dchoix1.on('click',function() {
     if (iTexte==15) {
