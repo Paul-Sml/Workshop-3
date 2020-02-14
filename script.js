@@ -10,6 +10,7 @@ let pac1i = 0;
 let iFond = $('#imageFond');
 let iPerso =$('#perso');
 let iPerso2 =$('#perso2');
+let iPerso3 =$('#perso3');
 
 //-------------------------Texte------------------------
 let t = [290];
@@ -171,20 +172,20 @@ t[147] = "Je ne vois que deux façons de sortir de cette fâcheuse situation. La
 t[148] = "La seconde est que vous vous décidez enfin à être raisonnable, et vous arrêtez de vous mêler de ce qui ne vous regarde pas. Dans ce cas je vous offrirai généreusement, ainsi qu’à votre famille une place dans un dirigeable si notre bienaimée Jaya’nah venait à nous quitter. La proposition vaut aussi pour vous, Gareth.";
 t[149] = "Alors tu disais vrai, petit. Poskinov se fiche vraiment du sort de la ville et de ses habitants.";
 t[150] = "Silence, Gareth. Choisissez tous les deux vos prochains mots avec attention. ma patience a atteint ses limites.";
-t[151] = "Bien.. Je pense que nous n’avons pas vraiment le choix...."
+t[151] = "Bien.. Je pense que nous n’avons pas vraiment le choix....";
 t[152] = "Quelle sage décision ! Bien, je ne puis m’entretenir avec vous plus longtemps, les affaires m’appellent. Puisque toute confusion est dissipée, plus rien ne me retient dans votre miteuse bâtisse. En vous souhaitant une agréable journée.";
 t[153] = "Cet homme est vraiment méprisable...";
 t[154] = "Ne t’inquiète pas Gareth, je ne compte pas le laisser s’en tirer à si bon compte.";
 t[155] = "Que veux-tu dire, mon garçon ?";
 t[156] = "Tu croyais vraiment que j’allais accepter sa proposition comme si j’étais à sa solde ? Je ne vais pas me laisser faire aussi facilement. Il doit sûrement penser que cette histoire est réglée, que nous nous sommes docilement rangés de son côté par peur.";
 t[157] = "Alors, on poursuit le plan ?";
-t[158] = "Bien sûr."
+t[158] = "Bien sûr.";
 t[159] = "Gareth et vous maintenez votre décision d'exécuter votre plan initial. Vous vous rendez à l’usine ensemble.";
 t[160] = "Tu sais qui est responsable des clés de la quarantaine aujourd’hui ?";
 t[161] = "Si je ne me trompe pas, c’est Chuck.";/**/
 t[162] = "Il ne nous laissera jamais les prendre !";
 t[163] = "Ne t’inquiète pas, je me charge de lui.";
-t[164] = ""
+t[164] = "";
 t[165] = "Qu’est-ce-qu’il se passe les gars ? Vous n’êtes pas censés travailler ?";
 t[166] = "Gareth ! Tu es vivant ! On a eu peur que le patron t’ait fait la peau ! On est désolés de ne pas avoir cru directement à l’histoire que tu nous avais raconté...";
 t[167] = "Ne vous en faites pas pour moi. Je suis plus résistant que j’en ai l’air, alors vous nous soutenez ? Vous bloquez la production ?";
@@ -205,7 +206,7 @@ t[181] = "Qui êtes-vous ? Vous ne faites pas partie du personnel soignant, si ?
 t[182] = "Je viens vous faire sortir de cet endroit. Que pensez-vous de monsieur Poskinov ?";
 t[183] = "Ah, le patron… On nous a dit qu’on était malades et qu’il fallait pas qu’on contamine nos familles, donc on est enfermés ici. C’est quelqu’un de bien, il nous soigne pour qu’on puisse revoir nos parents un jour.";
 t[184] = "Poskinov vous ment. Il a dit à vos familles que vous étiez morts. En plus, c’est à cause de lui que vous êtes malades, il jette les déchets toxiques à l’intérieur de Jaya’nah ! Si on le laisse continuer, sa pollution va la tuer et la ville va s’écraser. Il vous garde ici pour cacher la vérité.";
-t[185] = "Non...Ce n’est pas possible… Quel salaud !"
+t[185] = "Non...Ce n’est pas possible… Quel salaud !";
 t[186] = "Malheureusement si, et c’est pour ça que je viens vous chercher aujourd'hui. Vous devez sortir pour prouver à toute la ville que vous êtes vivants, et que votre maladie est due à la pollution de l’usine ! Si on ne fait rien, nous serons responsables de la mort de tous les habitants !";
 t[187] = "J’imagine qu’il n’y a qu’un seul moyen de découvrir la vérité..";
 t[188] = "Je vous donne ma parole, je n’ai aucune raison de vous mentir.";
@@ -294,6 +295,7 @@ t[280] = "Il n’y a effectivement aucun malentendu. Vous n’êtes pas sur la l
 t[281] = "Comment ça ? Et notre accord ?";
 t[282] = "Je tenais à vous faire venir ici afin de vous apprendre quelque chose, jeune homme. Lorsqu’un faible s’attaque bêtement à un fort, c’est toujours le fort qui l’emporte.";
 t[283] = "Abraham Poskinov fait feu, vous vous écroulez alors et vous assistez, impuissant, à sa fuite en dirigeable.";
+t[284] = "";
 //------------------------Fin texte------------------------
 
 //------------------------Avancer dans le dialgue------------------------
@@ -311,15 +313,16 @@ $('#bulle').on('click',function() {
         document.getElementById("deuxChoixB").style.visibility = "visible";
         document.getElementById("dchoix1").style.visibility = "visible";
         document.getElementById("dchoix2").style.visibility = "visible";
-        iFond.attr('src','assets/zzz.png');
-        iPerso.attr('src','assets/garcon.png');
+        iFond.attr('src','assets/chambreHero.png');
+        iPerso.attr('src','assets/william.png');
 
     }
+    if (iTexte==8){iFond.attr('src','assets/chambreHero.png');}
     if (iTexte==9){iTexte=14;iFond.attr('src','assets/usine.png');}
     if (iTexte==12){iTexte=14;iFond.attr('src','assets/usine.png');}
-    if (iTexte==13){iFond.attr('src','assets/usine.png');}
-        iPerso.attr('src','assets/william.png');
-    }
+    if (iTexte==13){iFond.attr('src','assets/usine.png');iPerso.attr('src','assets/william.png');}
+        
+    
     if (iTexte==8){iPerso.attr('src','assets/william.png');}
     if (iTexte==9){iTexte=14;iFond.attr('src','assets/usine.png'); iPerso2.attr('src','assets/chuck.png');}
     if (iTexte==12){iTexte=14;iFond.attr('src','assets/usine.png');iPerso2.attr('src','assets/chuck.png');}
@@ -334,7 +337,9 @@ $('#bulle').on('click',function() {
         iPerso2.attr('src','assets/vide.png');
     }
 
-    if (iTexte==18) {    
+    if (iTexte==18) {   
+        document.getElementById("dchoix1").style.visibility = "hidden";
+        document.getElementById("dchoix2").style.visibility = "hidden"; 
         document.getElementById("troisChoixB").style.visibility = "visible";
         document.getElementById("3").innerHTML = "Que se passe t-il avec le personnel ?";
         document.getElementById("4").innerHTML = "Je n’ai pas envie de risquer ma peau pour une machine ! Tu n’as qu’à y aller toi.";
@@ -348,7 +353,7 @@ $('#bulle').on('click',function() {
         iPerso2.attr('src','assets/chuck.png');
     }
     
-    if (iTexte==22){iFond.attr('src','assets/ventre.png');iPerso2.attr('src','assets/vide.png');iPerso.attr('src','assets/william.png')}
+    if (iTexte==22){iFond.attr('src','assets/ventre.png');iPerso2.attr('src','assets/vide.png');iPerso.attr('src','assets/william.png');}
     if (iTexte==32) {
         document.getElementById("deuxChoixB").style.visibility = "visible";
         document.getElementById("1").innerHTML = "Y aller discrètement";
@@ -357,8 +362,8 @@ $('#bulle').on('click',function() {
         document.getElementById("dchoix2").style.visibility = "visible";
         iFond.attr('src','assets/ventreS.png');
     }
-    if (iTexte==38){iFond.attr('src','assets/basQuartier.png');iPerso2.attr('src','assets/chuck.png');iPerso.attr('src','assets/vide.png')}
-  	if (iTexte==39){iFond.attr('src','assets/basQuartier.png');iPerso2.attr('src','assets/chuck.png');iPerso.attr('src','assets/vide.png')}
+    if (iTexte==38){iFond.attr('src','assets/stalk.png');iPerso.attr('src','assets/vide.png');}
+  	if (iTexte==39){iFond.attr('src','assets/stalk.png');iPerso.attr('src','assets/vide.png');}
 
     if (iTexte==40) {    
         document.getElementById("troisChoixB").style.visibility = "visible";
@@ -370,13 +375,18 @@ $('#bulle').on('click',function() {
         document.getElementById("tchoix3").style.visibility = "visible";
     }
     if (iTexte==62){iFond.attr('src','assets/cellule.png');}
-    if (iTexte==71){iFond.attr('src','assets/maisonGareth.png');}
     if (iTexte==66){iTexte=73;}
+    if (iTexte==71){iFond.attr('src','assets/maisonGareth.png');iPerso.attr('src','assets/william.png');}
+    if (iTexte==72){iFond.attr('src','assets/garethI.png');}
+    if (iTexte==73){iFond.attr('src','assets/garethI.png');}
     if (iTexte==85){iFond.attr('src','assets/coucherG.png');}
     if (iTexte==86){iFond.attr('src','assets/dodoG.png');}
     if (iTexte==89){iFond.attr('src','assets/coucherG.png');}
     if (iTexte==100){iFond.attr('src','assets/temple.png');}
+    if (iTexte==101){iFond.attr('src','assets/templeI.png');}
+    if (iTexte==102){iFond.attr('src','assets/templeI.png');}
     if (iTexte==118){iFond.attr('src','assets/maisonGareth.png');}
+    if (iTexte==119){iFond.attr('src','assets/garethI.png');}
     if (iTexte==150) {    
         document.getElementById("troisChoixB").style.visibility = "visible";
         document.getElementById("3").innerHTML = "Refuser catégoriquement";
@@ -414,7 +424,8 @@ $('#bulle').on('click',function() {
     if (iTexte==118){iFond.attr('src','assets/maisonGareth.png');iPerso.attr('src','assets/william.png');}
     if (iTexte==119){iPerso.attr('src','assets/william.png');iPerso2.attr('src','assets/gareth.png');}
     if (iTexte==134){iFond.attr('src','assets/usine.png');iPerso2.attr('src','assets/gareth.png')}
-    if (iTexte==142){iFond.attr('src','assets/maisonGareth.png');iPerso.attr('src','assets/william.png');iPerso2.attr('src','assets/gareth.png');iPerso3.attr('src','assets/vide.png');}
+    if (iTexte==139){iPerso2.attr('src','assets/gareth.png');iPerso3.attr('src','assets/boss.png')}
+    if (iTexte==142){iFond.attr('src','assets/garethI.png');iPerso.attr('src','assets/william.png');iPerso2.attr('src','assets/gareth.png');iPerso3.attr('src','assets/vide.png');}
     if (iTexte==144){iPerso3.attr('src','assets/boss.png');}
     if (iTexte==150) {    
         document.getElementById("troisChoixB").style.visibility = "visible";
@@ -444,8 +455,12 @@ $('#bulle').on('click',function() {
     if (iTexte==257){iFond.attr('src','assets/fin.png');iPerso.attr('src','assets/vide.png');iPerso2.attr('src','assets/vide.png');iPerso3.attr('src','assets/vide.png');}
 	if (iTexte==267){iFond.attr('src','assets/basQuartier.png');iPerso3.attr('src','assets/vide.png');iPerso2.attr('src','assets/lucy.png');}
 	if (iTexte==273){iPerso2.attr('src','assets/vide.png');iFond.attr('src','assets/villeRiche.png');}
-    if (iTexte==274){iPerso3.attr('src','assets/vide.png');iPerso2.attr('src','assets/boss.png')}
-    if (iTexte==280){iPerso2.attr('src','assets/boss.png');iPerso3.attr('src','assets/vide.png')}
+    if (iTexte==274){iPerso3.attr('src','assets/vide.png');iPerso2.attr('src','assets/boss.png');}
+    if (iTexte==275){iFond.attr('src','assets/predeath.png');}
+    if (iTexte==280){iPerso2.attr('src','assets/boss.png');iPerso3.attr('src','assets/vide.png');iFond.attr('src','assets/predeath.png');}
+    if (iTexte==282){iFond.attr('src','assets/death.png');}
+    if (iTexte==283){iFond.attr('src','assets/fuite.png');}
+    
 
     if (iTexte==200 || iTexte==259 || iTexte==283) {
         document.getElementById("texte").innerHTML = "FIN";
@@ -453,7 +468,7 @@ $('#bulle').on('click',function() {
     //Italic
     if (iTexte==21 || iTexte==22 || iTexte==31 || iTexte==32 || iTexte==38 || iTexte==62 || iTexte==117 || iTexte==159 || iTexte==177 || iTexte==180 || iTexte==190 || iTexte==191 || iTexte==193 || iTexte==198 || iTexte==199 || iTexte==200 || iTexte==209 || iTexte==214 || iTexte==232 || iTexte==237 || iTexte==240 || iTexte==250 || iTexte==252 || iTexte==257 || iTexte==258 || iTexte==259 || iTexte==266 || iTexte==272 || iTexte==275 || iTexte==279 || iTexte==283) {document.getElementById("texte").style.fontStyle = "italic";}else{document.getElementById("texte").style.fontStyle = "normal";}
     //Fin italic
-
+})
 //------------------------Fin avancer dialogue------------------------
 //Choix It 1------------------------2
 dchoix1.on('click',function() {
@@ -463,6 +478,7 @@ dchoix1.on('click',function() {
         document.getElementById("deuxChoixB").style.visibility = "hidden";
         document.getElementById("dchoix1").style.visibility = "hidden";
         document.getElementById("dchoix2").style.visibility = "hidden";
+        iFond.attr('src','assets/zzz.png');
     }
 })
 dchoix2.on('click',function() {
