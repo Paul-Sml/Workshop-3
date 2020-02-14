@@ -1,6 +1,6 @@
 //------------------------Initialisation------------------------
 let bulle = $('#bulle');
-let iTexte = 119;
+let iTexte = 190;
 let tchoix1 = $('#tchoix1');
 let tchoix2 = $('#tchoix2');
 let tchoix3 = $('#tchoix3');
@@ -295,11 +295,19 @@ t[280] = "Il n’y a effectivement aucun malentendu. Vous n’êtes pas sur la l
 t[281] = "Comment ça ? Et notre accord ?";
 t[282] = "Je tenais à vous faire venir ici afin de vous apprendre quelque chose, jeune homme. Lorsqu’un faible s’attaque bêtement à un fort, c’est toujours le fort qui l’emporte.";
 t[283] = "Abraham Poskinov fait feu, vous vous écroulez alors et vous assistez, impuissant, à sa fuite en dirigeable.";
-t[284] = "";
+t[284] = "FIN";
+t[285] = "Joey LE-ROY, Emilie ROQUES, Cédric HERVET, Alcide BAUDOUIN, Guillaume MARIETTE, Néo JOLY, Paul SEMMEL, Quentin GOTHARD, Stévenn GUEGUAN, Athénaïs HACQUIN. ";
+t[286] = "";
+t[287] = "";
+
 //------------------------Fin texte------------------------
 
 //------------------------Avancer dans le dialgue------------------------
-$('#bulle').on('click',function() {
+$('#bulle').on('click',function() {	
+	if (iTexte==220){iTexte=230}
+    if (iTexte==200 || iTexte==259 || iTexte==283) {
+        iTexte = 283;
+    }
     if (iTexte==13){iFond.attr('src','assets/usine.png');}
     if (iTexte!=6 && iTexte!=10 && iTexte!=15 && iTexte != 18 && iTexte!=32 && iTexte!=40 && iTexte!=150 && iTexte!=200 && iTexte!=259 && iTexte!=283) {
         iTexte ++;
@@ -443,7 +451,8 @@ $('#bulle').on('click',function() {
     if (iTexte==180){iPerso2.attr('src','assets/vide.png');iPerso3.attr('src','assets/vide.png');iPerso4.attr('src','assets/vide.png');iFond.attr('src','assets/ventreS.png');}
     if (iTexte==181){iPerso2.attr('src','assets/fille.png');iPerso3.attr('src','assets/vide.png');iPerso4.attr('src','assets/vide.png');iFond.attr('src','assets/ventreS.png');}
     if (iTexte==191){iFond.attr('src','assets/villeRiche.png');}
-    if (iTexte==192){iPerso3.attr('src','assets/fille.png');}
+    if (iTexte==192){iFond.attr('src','assets/foule.png');}
+    if (iTexte==194){iPerso.attr('src','assets/william.png');}
     if (iTexte==199){iFond.attr('src','assets/fin.png');iPerso.attr('src','assets/vide.png');iPerso2.attr('src','assets/vide.png');iPerso3.attr('src','assets/vide.png');iPerso4.attr('src','assets/vide.png');}
     if (iTexte==208){iPerso3.attr('src','assets/vide.png');}
     if (iTexte==210){iFond.attr('src','assets/basQuartier.png');iPerso3.attr('src','assets/vide.png');}
@@ -461,13 +470,10 @@ $('#bulle').on('click',function() {
     if (iTexte==280){iPerso2.attr('src','assets/boss.png');iPerso3.attr('src','assets/vide.png');iFond.attr('src','assets/predeath.png');}
     if (iTexte==282){iFond.attr('src','assets/death.png');}
     if (iTexte==283){iFond.attr('src','assets/fuite.png');}
+    if (iTexte==285){iFond.attr('src','assets/fin.png');}
     
-
-    if (iTexte==200 || iTexte==259 || iTexte==283) {
-        document.getElementById("texte").innerHTML = "FIN";
-    }
     //Italic
-    if (iTexte==21 || iTexte==22 || iTexte==31 || iTexte==32 || iTexte==38 || iTexte==62 || iTexte==117 || iTexte==159 || iTexte==177 || iTexte==180 || iTexte==190 || iTexte==191 || iTexte==193 || iTexte==198 || iTexte==199 || iTexte==200 || iTexte==209 || iTexte==214 || iTexte==232 || iTexte==237 || iTexte==240 || iTexte==250 || iTexte==252 || iTexte==257 || iTexte==258 || iTexte==259 || iTexte==266 || iTexte==272 || iTexte==275 || iTexte==279 || iTexte==283) {document.getElementById("texte").style.fontStyle = "italic";}else{document.getElementById("texte").style.fontStyle = "normal";}
+    if (iTexte==21 || iTexte==22 || iTexte==31 || iTexte==32 || iTexte==38 || iTexte==62 || iTexte==117 || iTexte==159 || iTexte==177 || iTexte==180 || iTexte==190 || iTexte==191 || iTexte==193 || iTexte==198 || iTexte==199 || iTexte==200 || iTexte==209 || iTexte==214 || iTexte==232 || iTexte==237 || iTexte==240 || iTexte==250 || iTexte==252 || iTexte==257 || iTexte==258 || iTexte==259 || iTexte==266 || iTexte==272 || iTexte==275 || iTexte==279 || iTexte==283 || iTexte==284) {document.getElementById("texte").style.fontStyle = "italic";}else{document.getElementById("texte").style.fontStyle = "normal";}
     //Fin italic
 })
 //------------------------Fin avancer dialogue------------------------
